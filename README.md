@@ -6,3 +6,4 @@ Members:
 Nina Vo
 Ava Bui
 Aarushi Buddhavarapu
+Adrian Valdez
