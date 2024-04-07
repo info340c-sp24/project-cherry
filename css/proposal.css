@@ -4,6 +4,28 @@ html {
   margin-right: 10%;
 }
 
+header {
+  background-color: #e6acde;
+  text-align: center;
+}
+
+h1 {
+  padding: 1%;
+}
+
 section {
   background-color: white;
+  padding-left: 1%;
+  padding-right: 1%;
 }
+
+h2 {
+  padding-top: 1%;
+}
+
+p {
+  padding-bottom: 1%;
+}
+
+
+
