@@ -13,6 +13,11 @@ h1 {
   padding: 1%;
 }
 
-section {
+main {
   background-color: white;
+  padding: 3vw;
+}
+
+header, main {
+  border-radius: 50px;
 }
