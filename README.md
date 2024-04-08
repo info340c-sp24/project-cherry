@@ -3,7 +3,7 @@
 This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
 
 Members:
-Nina Vo
-Ava Bui
-Aarushi Buddhavarapu
+Nina Vo,
+Ava Bui,
+Aarushi Buddhavarapu,
 Adrian Valdez
