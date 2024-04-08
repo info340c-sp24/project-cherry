@@ -4,9 +4,15 @@ html {
   margin-right: 10%;
 }
 
+header {
+  background-color: #e6acde;
+  text-align: center;
+}
+
+h1 {
+  padding: 1%;
+}
+
 section {
   background-color: white;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
 }
