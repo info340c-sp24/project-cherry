@@ -6,4 +6,7 @@ html {
 
 section {
   background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
 }
