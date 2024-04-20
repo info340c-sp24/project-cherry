@@ -5,30 +5,23 @@ html {
     font-family:"Georgia", "Times New Roman", "Times", "serif";
   }
   
-  header {
+  /* header {
     background-color: #e6acde;
     text-align: center;
-  }
+  } */
   
-  h1 {
-    padding: 1%;
-    text-align: center;
-    background-color: white;
-  }
   
-  main {
-    background-color: white;
-    padding: 3vw;
-  }
   
   header, main {
     border-radius: 50px;
+    text-align: center;
   }
 
   p{
     text-align: center;
     text-decoration:solid;
   }
+
 nav {
     position: fixed;
     top: 0;
@@ -48,4 +41,20 @@ nav ul {
 nav li {
     display: inline;
     margin: 0 1rem;
+}
+
+#grid{
+  text-align: center;
+}
+
+table{
+  text-align: center;
+}
+
+.form-example{
+  padding: 1rem;
+}
+
+.btn-primary{
+  position:right;
 }
