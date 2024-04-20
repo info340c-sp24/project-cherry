@@ -1,8 +1,16 @@
-html {
+body {
     background-color: #e584cd;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: block;
+    box-sizing: border-box;
     font-family:"Georgia", "Times New Roman", "Times", "serif";
+  }
+
+  body, html {
+    height: 80%;
+    padding: 0;
   }
 
   header {
@@ -48,13 +56,6 @@ nav li {
 /*
 * Dashboard styles
 */
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 main {
   display: flex;
   flex-direction: row;
