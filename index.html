@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="imges/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Cherry Dashboard</title>
 </head>
 <body>
+    <header>
+        <h1>Cherry Habit Tracker</h1>
+    </header>
     <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -16,11 +19,27 @@
           <li><a href="proposal.html">Proposal</a></li>
         </ul>
     </nav>
-    <header> 
-        <h1>Cherry Habit Tracker</h1>
-    </header>
     <main>
-
+        <article id="todays-checklist">
+            <h2>Today's Checklist</h2>
+            <!-- Content here -->
+        </article>
+        <article id="weekly-checklist">
+            <h2>Weekly Checklist</h2>
+            <!-- Content here -->
+        </article>
+        <div class="thirds">
+            <article id="summary">
+                <h2>Summary</h2>
+                <!-- Content here -->
+            </article>
+            <article id="enter-text">
+                <h2>Enter Text Here</h2>
+                <form>
+                    <textarea name="user-input" rows="4" cols="20" placeholder="Type here..."></textarea>
+                </form>
+            </article>
+        </div>
     </main>
 </body>
 </html>
