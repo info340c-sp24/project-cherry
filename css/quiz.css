@@ -4,23 +4,21 @@ html {
     margin-right: 10%;
     font-family:"Georgia", "Times New Roman", "Times", "serif";
   }
-  
+
   /* header {
     background-color: #e6acde;
     text-align: center;
   } */
-  
-  
-  
-  header, main {
-    border-radius: 50px;
-    text-align: center;
-  }
 
-  p{
-    text-align: center;
-    text-decoration:solid;
-  }
+header, main {
+  border-radius: 50px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  text-decoration:solid;
+}
 
 nav {
     position: fixed;
