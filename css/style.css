@@ -68,3 +68,12 @@ nav li {
 .card-text-goals{
   font-size: 30px;
 }
+
+.card-img {
+  width: 20px; 
+  height: auto; 
+}
+
+@media (max-width: 768px) {
+
+}
