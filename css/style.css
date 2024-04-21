@@ -8,6 +8,7 @@ html {
   header {
     background-color: #e6acde;
     text-align: center;
+    margin-top: 60px;
   }
   
   h1 {
@@ -43,4 +44,27 @@ nav ul {
 nav li {
     display: inline;
     margin: 0 1rem;
+}
+
+.summary-header{
+  text-align: left;
+}
+
+.profile-picture{
+  border-radius: 60%; 
+  width: 60px; 
+  height: 60px;
+  margin-right: 2rem;
+}
+
+.card-title{
+  font-size: 15px;
+}
+
+.card-text{
+  font-size: 40px;
+}
+
+.card-text-goals{
+  font-size: 30px;
 }
