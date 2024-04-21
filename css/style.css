@@ -1,25 +1,33 @@
-html {
+body {
     background-color: #e584cd;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: block;
+    box-sizing: border-box;
     font-family:"Georgia", "Times New Roman", "Times", "serif";
   }
-  
+
+  body, html {
+    height: 80%;
+    padding: 0;
+  }
+
   header {
     background-color: #e6acde;
     text-align: center;
     margin-top: 60px;
   }
-  
+
   h1 {
     padding: 1%;
   }
-  
+
   main {
     background-color: white;
     padding: 3vw;
   }
-  
+
   header, main {
     border-radius: 50px;
   }
@@ -33,7 +41,6 @@ nav {
     background-color: white;
     padding: .5rem;
     padding-bottom: 1rem;
-    margin-bottom: 2%;
 }
 
 nav ul {
@@ -74,6 +81,41 @@ nav li {
   height: auto; 
 }
 
-@media (max-width: 768px) {
 
+/*
+* Dashboard styles
+*/
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
+
+article {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#todays-checklist, #weekly-checklist {
+  width: 33.333%; /* One third of the screen each */
+  height: 100%; /* They take up half of the vertical space each */
+}
+
+.thirds {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#summary, #enter-text {
+  height: 50%; /* Each takes up half of the vertical space in the last third */
+}
+
+textarea {
+  width: 100%; /* Makes the textarea fill the container */
+  box-sizing: border-box; /* Includes padding and border in the width */
+}
+

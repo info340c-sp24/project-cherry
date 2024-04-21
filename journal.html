@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/tempjournal.css">
     <link href="imges/favicon.ico" rel="icon" type="image/x-icon">
     <title>Cherry Journal</title>
@@ -21,6 +22,45 @@
         <h2>Journal</h2>
     </header>
     <main>
+        <div id="journal">
+            <section id="entries">
+                <div class="title">
+                    <h2>Past Entries</h2>
+                </div>
+                
+                <div class="entry">
+                    <h3>Title A</h3>
+                    <p class="date"><time datetime="2024-04-20">date and time</time></p>
+                    <p class="first-line">first line text</p>
+                </div>
+                <div class="entry">
+                    <h3>Title A</h3>
+                    <p class="date"><time datetime="2024-04-20">date and time</time></p>
+                    <p class="first-line">first line text</p>
+                </div>
+                <div class="entry">
+                    <h3>Title A</h3>
+                    <p class="date"><time datetime="2024-04-20">date and time</time></p>
+                    <p class="first-line">first line text</p>
+                </div>
+            </section>
+            <section id="page">
+                <div class="title">
+                    <h2 id="current-title">Current Entry</h2>
+                    <p class="date"><time datetime="2024-04-20">04-20-2024</time></p>
+                </div>
+                <div id="write">
+                    <form>
+                        <label for="current-entry">Current</label>
+                        <textarea id="current-entry" name="current-entry" rows="25"></textarea>
+                        <input id="save" type="submit" value="Save">
+                    </form>
+                </div>
+
+            </section>
+            
+
+        </div>
         
 
     </main>

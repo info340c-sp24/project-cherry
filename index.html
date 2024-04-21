@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="imges/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Cherry Dashboard</title>
 </head>
 <body>
+    <header>
+        <h1>Cherry Habit Tracker</h1>
+    </header>
     <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -16,11 +19,37 @@
           <li><a href="proposal.html">Proposal</a></li>
         </ul>
     </nav>
-    <header> 
-        <h1>Cherry Habit Tracker</h1>
-    </header>
     <main>
-
+        <article id="todays-checklist">
+            <h2>Today's Checklist</h2>
+            <ul>
+                <li>Esse nulla est cillum magna duis.</li>
+                <li>Ex ea proident cupidatat excepteur proident enim aute pariatur est laborum et.</li>
+                <li>Ut incididunt nisi cillum consectetur dolore aliqua pariatur.</li>
+                <li>Magna labore ad aliqua culpa ad id laborum irure non magna.</li>
+            </ul>
+        </article>
+        <article id="weekly-checklist">
+            <h2>Weekly Checklist</h2>
+            <ul>
+                <li>Ut sunt velit incididunt do Lorem exercitation enim quis ad sunt ad.</li>
+                <li>Nostrud non ut labore aute non dolore amet laboris cillum sit nisi est dolore amet.</li>
+                <li>Ad nostrud aute ex in esse ipsum nulla culpa mollit anim do et.</li>
+                <li>Consequat eu officia nostrud cupidatat dolore quis aute exercitation amet est cupidatat.</li>
+            </ul>
+        </article>
+        <div class="thirds">
+            <article id="summary">
+                <h2>Summary</h2>
+                <p></p>
+            </article>
+            <article id="enter-text">
+                <h2>Enter Text Here</h2>
+                <form>
+                    <textarea name="user-input" rows="4" cols="20" placeholder="Type here..."></textarea>
+                </form>
+            </article>
+        </div>
     </main>
 </body>
 </html>
