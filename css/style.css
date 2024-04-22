@@ -1,7 +1,6 @@
 body {
     background-color: #e584cd;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 30px auto;
     width: 80%;
     display: block;
     box-sizing: border-box;
@@ -36,10 +35,10 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    /* color: white; */
     background-color: white;
     padding: .5rem;
     padding-bottom: 1rem;
+    margin-bottom: 30px;
 }
 
 nav ul {
@@ -68,9 +67,9 @@ article {
   box-sizing: border-box;
 }
 
-#todays-checklist, #weekly-checklist {
-  width: 33.333%; /* One third of the screen each */
-  height: 100%; /* They take up half of the vertical space each */
+.checklist {
+  width: 33.333%;
+  height: 100%;
 }
 
 .thirds {
@@ -80,11 +79,52 @@ article {
   height: 100%;
 }
 
-#summary, #enter-text {
-  height: 50%; /* Each takes up half of the vertical space in the last third */
+.thirds > article > img {
+  height: 200px;
+}
+
+.thirds > article {
+  height: 50%;
 }
 
 textarea {
-  width: 100%; /* Makes the textarea fill the container */
-  box-sizing: border-box; /* Includes padding and border in the width */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*
+* Footer styles
+*/
+footer {
+  background-color: #f3e0f7;
+  color: #333;
+  padding: 1rem;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+  margin-bottom: 20px;
+  font-family: "Georgia", "Times New Roman", "Times", "serif";
+  font-size: 0.95em;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+footer li {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: #864e95;
+  text-decoration: none;
+}
+
+footer a:hover, footer a:focus {
+  text-decoration: underline;
+  color: #bf77b6;
 }
