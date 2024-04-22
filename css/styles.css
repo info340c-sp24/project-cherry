@@ -228,7 +228,6 @@ body.summary-page main {
 /*
 * Dashboard styles
 */
-
 article {
   border: 1px solid #ccc;
   margin: 10px;
@@ -367,3 +366,58 @@ textarea {
   padding: 5px;
   margin-top: .5rem;
 }
+
+/* Quiz Styling */
+
+
+  
+  table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form-example{
+    padding: 1rem;
+  }
+  
+  .orientation{
+    text-align: center;
+  }
+
+  .treatmentinput{
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .quizmessage{
+    font-size: medium;
+    padding: 1rem;
+  }
+
+  .mybutton {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 12px;
+    border: 2px solid #f2d9ef;
+    background-color: #f2d9ef;
+    color: black;
+    text-align: center;
+    
+  }
+
+  .mybutton:hover {
+    background-color:#e6acde;
+    border: 2px solid #e6acde;
+    color:#421a39;
+  }
+  
+  .grid{
+    text-align: center;
+  }
+
+  th{
+    padding: 2em 2em 1em 1em;
+    text-align: center;
+  }
+  
