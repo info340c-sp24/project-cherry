@@ -343,12 +343,12 @@ textarea {
 
 /* Quiz Styling */
 
-#grid{
-    text-align: center;
-  }
+
   
   table{
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .form-example{
@@ -392,6 +392,6 @@ textarea {
 
   th{
     padding: 2em 2em 1em 1em;
-
+    text-align: center;
   }
   
