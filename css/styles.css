@@ -373,15 +373,16 @@ textarea {
     display: inline-block;
     padding: 10px 10px;
     font-size: 12px;
-    border: 2px solid #bf77b6;
-    background-color: #bf77b6;
-    color: white;
+    border: 2px solid #f2d9ef;
+    background-color: #f2d9ef;
+    color: black;
     text-align: center;
     
   }
 
   .mybutton:hover {
-    background-color: white;
+    background-color:#e6acde;
+    border: 2px solid #e6acde;
     color:#421a39;
   }
   
