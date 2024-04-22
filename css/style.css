@@ -1,129 +1,84 @@
 body {
-  background-color: #e584cd;
-  font-family:"Georgia", "Times New Roman", "Times", "serif";
-}
+    background-color: #e584cd;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: block;
+    box-sizing: border-box;
+    font-family:"Georgia", "Times New Roman", "Times", "serif";
+  }
 
-<<<<<<< HEAD
-body, html {
-height: 80%;
-padding: 0;
-margin: 0;
-}
-=======
   body, html {
-    height: 85%;
+    height: 80%;
     padding: 0;
   }
->>>>>>> 01dfcd5b361186b7d313c258a3d5c0f60fb7fc15
 
-header {
-margin: 60px auto;
-background-color: #e6acde;
-text-align: center;
-}
+  header {
+    background-color: #e6acde;
+    text-align: center;
+    margin-top: 60px;
+  }
 
-<<<<<<< HEAD
-h1 {
-padding: 1%;
-}
-
-main {
-background-color: white;
-padding: 3vw;
-margin-left: auto;
-margin-right: auto;
-}
-=======
   h1 {
     padding: 1%;
-    padding-bottom: 0;
   }
 
   main {
     background-color: white;
-    padding: 4vw;
-    box-sizing: border-box;
-    height:100%;
+    padding: 3vw;
   }
 
   header, main {
     border-radius: 50px;
   }
->>>>>>> 01dfcd5b361186b7d313c258a3d5c0f60fb7fc15
 
-header, main {
-border-radius: 50px;
-width: 80%;
-display: block;
-box-sizing: border-box;
-}
-
-/*
-* Nav styles
-*/
 nav {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-background-color: #e6acde;
-color: white;
-box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
-z-index: 1000;
-padding: 0.8em 0;
-box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* color: white; */
+    background-color: white;
+    padding: .5rem;
+    padding-bottom: 1rem;
 }
 
 nav ul {
-margin: 0 auto;
-padding: 0 10px;
-display: flex;
-justify-content: center;
-list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
-margin: 0 20px;
-font-size: 1.2em;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-transition: color 0.6s;
-}
-
-nav a:hover, nav a:focus {
-color: #421a39;
-text-decoration: none;
+    display: inline;
+    margin: 0 1rem;
 }
 
 .summary-header{
-text-align: left;
+  text-align: left;
 }
 
 .profile-picture{
-border-radius: 60%;
-width: 60px;
-height: 60px;
-margin-right: 2rem;
+  border-radius: 60%; 
+  width: 60px; 
+  height: 60px;
+  margin-right: 2rem;
 }
 
 .card-title{
-font-size: 15px;
+  font-size: 15px;
 }
 
 .card-text{
-font-size: 40px;
+  font-size: 40px;
 }
 
 .card-text-goals{
-font-size: 30px;
+  font-size: 30px;
 }
 
 .card-img {
-width: 20px;
-height: auto;
+  width: 20px; 
+  height: auto; 
 }
 
 
@@ -131,200 +86,60 @@ height: auto;
 * Dashboard styles
 */
 main {
-display: flex;
-flex-direction: row;
-height: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
-
 
 article {
-border: 1px solid #ccc;
-margin: 10px;
-padding: 10px;
-box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.checklist {
-width: 33.333%;
-height: 100%;
+#todays-checklist, #weekly-checklist {
+  width: 33.333%; /* One third of the screen each */
+  height: 100%; /* They take up half of the vertical space each */
 }
 
 .thirds {
-width: 33.333%;
-display: flex;
-flex-direction: column;
-height: 100%;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.thirds > article > img {
-height: 80px;
-}
-
-.thirds > article {
-height: 50%;
+#summary, #enter-text {
+  height: 50%; /* Each takes up half of the vertical space in the last third */
 }
 
 textarea {
-<<<<<<< HEAD
-width: 100%;
-box-sizing: border-box;
-}
-
-
-/*
-* Lists styles
-*/
-.icon {
-width: 20px; /* Set an appropriate size for your icons */
-height: 20px;
-cursor: pointer; /* Makes it clear that the icons are clickable */
-padding-left: 5px; /* Spacing to separate icon from text */
-}
-
-.edit, .remove {
-margin-left: 10px;
-}
-
-.add {
-display: block;
-width: 20px;
-height: 20px;
-border: none;
-background: transparent;
-position: absolute;
-right: 10px;
-bottom: 10px;
-cursor: pointer;
-}
-
-article {
-position: relative;
-padding: 15px;
-overflow: hidden;
-}
-
-ul {
-list-style-type: none;
-padding: 0;
-}
-
-li {
-margin-bottom: 5px;
-=======
   width: 100%; /* Makes the textarea fill the container */
   box-sizing: border-box; /* Includes padding and border in the width */
 }
 
-/* journal css */
-.content {
-  display: flex;
-  flex-direction: row;
-}
 
-.entries {
-  flex: 1;
-  padding-right:.5rem;
-  border-right: solid 2px #e6acde;
-}
-
-.entry {
-  display: contents;
-  
-}
-
-.page {
-  padding-left: 1rem;
-  flex: content;
-  
-}
-
-h2 {
+/* Quiz Page */
+.message{
   text-align: center;
-  margin-top: 0;
 }
 
-.subheader {
-  padding-bottom: 1%;
+.mybutton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid;
+  background-color:lightpink;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+  
+
+.my-button:hover {
+  background-color: white;
+  color: black;
 }
 
-.current-title {
-  text-align: left;
-  margin-bottom: 0;
-}
-
-h3 {
-  font-size:medium;
-  margin:0;
-  padding-top: .25rem;
-}
-
-p {
-  font-size:small;
-  margin: 0;
-}
-
-.date {
-  padding-bottom: 3px;
-  font-style:italic;
-}
-
-.first-line {
-  padding-bottom: .25rem;
-  border-bottom: dashed 1px black;
-}
-
-textarea {
-  width: 100%;
-  height: 100%;
-  background-color: #f2d9ef;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  margin-top: .5rem;
-}
-
-@media (min-width: 600px) {
-
-}
-
-  width: 100%;
-  box-sizing: border-box;
->>>>>>> 01dfcd5b361186b7d313c258a3d5c0f60fb7fc15
-}
-
-/*
-* Footer styles
-*/
-footer {
-width: 100%;
-background-color: #f3e0f7;
-color: #333;
-text-align: center;
-padding: 3rem 0 10rem 0;
-border-radius: 0;
-box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-font-size: 0.95em;
-margin-top: 2rem;
-}
-
-footer ul {
-list-style-type: none;
-padding: 0;
-margin: 10px 0;
-display: flex;
-justify-content: center;
-}
-
-footer li {
-margin: 0 10px;
-}
-
-footer a {
-color: #864e95;
-text-decoration: none;
-}
-
-footer a:hover, footer a:focus {
-text-decoration: underline;
-color: #bf77b6;
-}
