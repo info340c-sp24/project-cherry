@@ -202,11 +202,6 @@ body.summary-page main {
 /*
 * Dashboard styles
 */
-/* main {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  } */
 
 article {
   border: 1px solid #ccc;
