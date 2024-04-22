@@ -208,8 +208,8 @@ body.summary-page main {
 .summary-card {
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 15px;
   margin: 0 15px 20px;
-  max-width: 540px;
   flex: 1 0 100%;
   background-color: white;
   padding: 20px;
