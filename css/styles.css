@@ -120,7 +120,6 @@ body.summary-page main {
   margin-bottom: 20px;
 }
 
-
 .profile-picture {
   width: 50px;
   height: 50px;
@@ -140,6 +139,8 @@ body.summary-page main {
   margin: 0 15px 20px;
   max-width: 540px;
   flex: 1 0 100%;
+  background-color: white;
+  padding: 20px;
 }
 
 .card-text{
@@ -155,12 +156,6 @@ body.summary-page main {
 .summary-card-content {
   display: flex;
   align-items: center;
-}
-
-.card-img {
-  width: 20px;
-  height: auto;
-
 }
 
 .summary-card-img {
@@ -181,12 +176,13 @@ body.summary-page main {
 }
 
 .summary-card-text-goals {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .list-group-item {
   padding: 5px;
   border-bottom: 1px solid #ccc;
+  font-size: 1.5em;
 }
 
 .card-text ul {
@@ -195,8 +191,38 @@ body.summary-page main {
 }
 
 .card-text ul li {
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+  
+  .summary-card {
+    padding: 50px;
+  }
+
+  .summary-card-title {
+    font-size: 1.5em;
+  }
+  
+  .summary-card-text {
+    font-size: 2.5em;
+  }
+
+  .summary-card-text-goals {
+    font-size: 2.5em;
+  }
+  
+  .list-group-item {
+    font-size: 2.5em;
+  }
+
+  .summary-card-img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 }
 
 /*
