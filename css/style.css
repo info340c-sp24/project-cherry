@@ -53,34 +53,85 @@ nav li {
     margin: 0 1rem;
 }
 
-.summary-header{
-  text-align: left;
+/*
+* Summary styles
+*/
+
+body.summary-page main {
+  display: block;
+  background-color: #e584cd
 }
 
-.profile-picture{
-  border-radius: 60%; 
-  width: 60px; 
-  height: 60px;
-  margin-right: 2rem;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.card-title{
-  font-size: 15px;
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.card-text{
-  font-size: 40px;
+.summary-container {
+  margin: 20px auto;
 }
 
-.card-text-goals{
-  font-size: 30px;
+.summary-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 15px 20px;
+  max-width: 540px;
+  flex: 1 0 100%;
 }
 
-.card-img {
-  width: 20px; 
-  height: auto; 
+.summary-card-body {
+  padding: 20px;
+}
+.summary-card-content {
+  display: flex;
+  align-items: center;
 }
 
+.summary-card-img {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.summary-card-title {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.summary-card-text {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.summary-card-text-goals {
+  font-size: 1em;
+}
+
+.list-group-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.card-text ul {
+  list-style: none; 
+  padding: 0; 
+}
+
+.card-text ul li {
+  font-size: 1em;
+  margin: 5px 0; 
+}
+
+*/
 
 /*
 * Dashboard styles
