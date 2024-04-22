@@ -341,3 +341,57 @@ textarea {
   padding: 5px;
   margin-top: .5rem;
 }
+
+/* Quiz Styling */
+
+#grid{
+    text-align: center;
+  }
+  
+  table{
+    text-align: center;
+  }
+  
+  .form-example{
+    padding: 1rem;
+  }
+  
+  .orientation{
+    text-align: center;
+  }
+
+  .treatmentinput{
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .quizmessage{
+    font-size: medium;
+    padding: 1rem;
+  }
+
+  .mybutton {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 12px;
+    border: 2px solid #bf77b6;
+    background-color: #bf77b6;
+    color: white;
+    text-align: center;
+    
+  }
+
+  .mybutton:hover {
+    background-color: white;
+    color:#421a39;
+  }
+  
+  .grid{
+    text-align: center;
+  }
+
+  th{
+    padding: 2em 2em 1em 1em;
+
+  }
+  

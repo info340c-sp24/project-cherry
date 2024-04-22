@@ -25,7 +25,8 @@
       </div>
     </header>
     <main>
-        <p>Fill out these questions so we can curate the best experience for you!</p>
+      <div class="orientation">
+        <p class="quizmessage">Fill out these questions so we can curate the best experience for you!</p>
 
               <section>
               <form action="" method="get" class="form-example">
@@ -37,24 +38,23 @@
                 <label for="email">Enter your email: </label>
                 <input type="email" name="email" id="email" required />
               </div>
-              <div class="form-example">
-                <label for="email">Enter your email: </label>
-                <input type="email" name="email" id="email" required />
-              </div>
               <div>
                 <input type="file" name="file" accept="image/*">
-                <button>Upload</button>
+                <button class="mybutton">Upload a Profile Picture</button>
               </div>
               </form>
             </section>
+          </div>
 
-          <section>
+          <section class= 'treatmentinput'>
                 <h2 >Input Your Treatment Tasks</h2>
-                <p >Input each of your tasks and the daily frequency. To add more
+                <p class="quizmessage">Input each of your tasks and the daily frequency. To add more
                   rows, hit enter, and copy and paste the text you have inputted.
                 </p>
+                <div class="d-flex justify-content-center">
+                <div class="grid">
                 <form action="" method="get" class="form-example">
-                  <table id="grid">
+                  <table>
                     <tr>
                         <th>Daily Task</th>
                         <th>Frequency</th>
@@ -80,6 +80,8 @@
                 <td>Frequency</td>
             </tr>
           </table>
+        </div>
+      </div>
 
 
                 </form>
@@ -89,10 +91,10 @@
 
 
 </form>
-<p>Don't worry if you have to make changes to your daily routine, you can always
+<p class="quizmessage">Don't worry if you have to make changes to your daily routine, you can always
   make those edits later!
 </p>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="mybutton submit">Submit</button>
 
 </main>
 
