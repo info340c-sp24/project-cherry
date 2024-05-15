@@ -1,0 +1,24 @@
+html {
+  background-color: #e584cd;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family:"Georgia", "Times New Roman", "Times", "serif";
+}
+
+header {
+  background-color: #e6acde;
+  text-align: center;
+}
+
+h1 {
+  padding: 1%;
+}
+
+main {
+  background-color: white;
+  padding: 3vw;
+}
+
+header, main {
+  border-radius: 50px;
+}

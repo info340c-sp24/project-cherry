@@ -1,0 +1,258 @@
+@media only screen and (max-width: 768px) {
+  header, main {
+      width: 100%;  /* Use full width */
+      border-radius: 20px; /* Adjusted border radius */
+      padding: 10px 5%;  /* Consistent padding */
+  }
+
+  h1 {
+      margin-top: 10px; /* Reduce top margin */
+      padding: 2% 3%; /* Adjusted padding */
+  }
+
+  body {
+      font-size: 14px; /* Smaller font size for better readability */
+  }
+
+  nav {
+      padding: 0.5em 0;  /* Less vertical padding */
+      font-size: 0.9em;  /* Smaller font size for nav items */
+  }
+
+  nav ul {
+      flex-direction: column; /* Stack navigation links vertically */
+  }
+
+  nav li {
+      margin: 10px 5px; /* Smaller margins */
+  }
+
+  article, .checklist, .thirds {
+      width: 100%; /* Full width for better space utilization */
+      margin: 5px 0; /* Smaller margins */
+      padding: 8px; /* Less padding inside articles */
+  }
+
+  .thirds {
+      flex-direction: column; /* Stack articles vertically */
+  }
+
+  .thirds > article {
+      height: auto; /* Flexible height */
+  }
+
+  .thirds > article > img, .icon {
+      width: 15px; /* Smaller icons */
+      height: 15px;
+  }
+
+  .add {
+      width: 15px;
+      height: 15px;
+      right: 5px; /* Adjust position */
+      bottom: 5px;
+  }
+
+  textarea {
+      height: 120px; /* Fixed height for textarea */
+  }
+
+  footer {
+      padding: 1rem 0;  /* Reduced padding */
+      font-size: 0.8em; /* Smaller font size */
+  }
+
+  /* Specific rule to hide the image in the 'Summary' article */
+  .placeholder {
+      display: none;
+      visibility: hidden;
+  }
+}
+
+body {
+  background-color: #e584cd;
+  font-family:"Georgia", "Times New Roman", "Times", "serif";
+}
+
+header {
+  margin: 60px auto;
+  background-color: #e6acde;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+  padding: 1%;
+}
+
+main {
+  background-color: white;
+  padding: 3vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header, main {
+  border-radius: 50px;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/*
+* Nav styles
+*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e6acde;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
+  z-index: 1000;
+  padding: 0.8em 0;
+  box-sizing: border-box;
+  }
+
+  nav ul {
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  }
+
+  nav li {
+  margin: 0 20px;
+  font-size: 1.2em;
+  }
+
+  nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.6s;
+  }
+
+  nav a:hover, nav a:focus {
+  color: #421a39;
+  text-decoration: none;
+  }
+
+  /*
+* Footer styles
+*/
+footer {
+  width: 100%;
+  background-color: #f3e0f7;
+  color: #333;
+  text-align: center;
+  padding: 3rem 0 10rem 0;
+  border-radius: 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  font-size: 0.95em;
+  margin-top: 2rem;
+  }
+
+  footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  }
+
+  footer li {
+  margin: 0 10px;
+  }
+
+  footer a {
+  color: #864e95;
+  text-decoration: none;
+  }
+
+  footer a:hover, footer a:focus {
+  text-decoration: underline;
+  color: #bf77b6;
+  }
+
+
+/*
+* Dashboard styles
+*/
+article {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.checklist {
+width: 33.333%;
+height: 100%;
+}
+
+.thirds {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thirds > article > img {
+  height: 80px;
+}
+
+.thirds > article {
+  height: 50%;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*
+* Icon styles
+*/
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.edit, .remove {
+  margin-left: 10px;
+}
+
+.add {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+article {
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}

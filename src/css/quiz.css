@@ -1,0 +1,58 @@
+html {
+    background-color: #e584cd;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family:"Georgia", "Times New Roman", "Times", "serif";
+  }
+
+  /* header {
+    background-color: #e6acde;
+    text-align: center;
+  } */
+
+header, main {
+  border-radius: 50px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  text-decoration:solid;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* color: white; */
+    background-color: white;
+    padding: .5rem;
+    padding-bottom: 1rem;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+#grid{
+  text-align: center;
+}
+
+table{
+  text-align: center;
+}
+
+.form-example{
+  padding: 1rem;
+}
+
+.btn-primary{
+  position:right;
+}

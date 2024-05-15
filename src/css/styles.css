@@ -1,0 +1,494 @@
+/*Dashboard media queries*/
+@media only screen and (max-width: 768px) {
+  header, main {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 5%;
+  }
+
+  h1 {
+    margin-top: 10px;
+    padding: 2% 3%;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    padding: 0.5em 0;
+    font-size: 0.9em;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin: 10px 5px;
+  }
+
+  article, .checklist, .thirds {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+  }
+
+  .thirds {
+    flex-direction: column;
+  }
+
+  .thirds > article {
+    height: auto;
+  }
+
+  .thirds > article > img, .icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .add {
+    width: 15px;
+    height: 15px;
+    right: 5px;
+    bottom: 5px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  footer {
+    padding: 1rem 0;
+    font-size: 0.8em;
+  }
+
+
+  .placeholder {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+body {
+  background-color: #e584cd;
+  font-family:"Georgia", "Times New Roman", "Times", "serif";
+}
+
+header {
+  margin: 60px auto;
+  background-color: #e6acde;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+  padding: 1%;
+}
+
+main {
+  background-color: white;
+  padding: 3vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header, main {
+  border-radius: 50px;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/*
+* Nav styles
+*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e6acde;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
+  z-index: 1000;
+  padding: 0.8em 0;
+  box-sizing: border-box;
+  }
+
+  nav ul {
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  }
+
+  nav li {
+  margin: 0 20px;
+  font-size: 1.2em;
+  }
+
+  nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.6s;
+  }
+
+  nav a:hover, nav a:focus {
+  color: #421a39;
+  text-decoration: none;
+  }
+
+  /*
+* Footer styles
+*/
+footer {
+  width: 100%;
+  background-color: #f3e0f7;
+  color: #333;
+  text-align: center;
+  padding: 3rem 0 10rem 0;
+  border-radius: 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  font-size: 0.95em;
+  margin-top: 2rem;
+  }
+
+  footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  }
+
+  footer li {
+  margin: 0 10px;
+  }
+
+  footer a {
+  color: #864e95;
+  text-decoration: none;
+  }
+
+  footer a:hover, footer a:focus {
+  text-decoration: underline;
+  color: #bf77b6;
+  }
+
+/*
+* Summary styles
+*/
+
+body.summary-page main {
+  display: block;
+  background-color: #e584cd
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card-title{
+  font-size: 15px;
+}
+.summary-container {
+  margin: 20px auto;
+}
+
+.summary-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin: 0 15px 20px;
+  flex: 1 0 100%;
+  background-color: white;
+  padding: 20px;
+}
+
+.card-text{
+  font-size: 40px;
+}
+.summary-card-body {
+  padding: 20px;
+}
+
+.card-text-goals{
+  font-size: 30px;
+}
+.summary-card-content {
+  display: flex;
+  align-items: center;
+}
+
+.summary-card-img {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.summary-card-title {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.summary-card-text {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.summary-card-text-goals {
+  font-size: 1.5em;
+}
+
+.list-group-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.5em;
+}
+
+.card-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-text ul li {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+
+  .summary-card {
+    padding: 50px;
+  }
+
+  .summary-card-title {
+    font-size: 1.5em;
+  }
+
+  .summary-card-text {
+    font-size: 2.5em;
+  }
+
+  .summary-card-text-goals {
+    font-size: 2.5em;
+  }
+
+  .list-group-item {
+    font-size: 2.5em;
+  }
+
+  .summary-card-img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+/*
+* Dashboard styles
+*/
+article {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.checklist {
+width: 33.333%;
+height: 100%;
+}
+
+.thirds {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thirds > article > img {
+  height: 80px;
+}
+
+.thirds > article {
+  height: 50%;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*
+* Icon styles
+*/
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.edit, .remove {
+  margin-left: 10px;
+}
+
+.add {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+article {
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* journal css */
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.entries {
+  flex: 1;
+  padding-right:.5rem;
+  border-right: solid 2px #e6acde;
+}
+
+.entry {
+  display: contents;
+}
+
+.page {
+  padding-left: 1rem;
+  flex: content;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.subheader {
+  padding-bottom: 1%;
+}
+
+.current-title {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size:medium;
+  margin:0;
+  padding-top: .25rem;
+}
+
+p {
+  font-size:small;
+  margin: 0;
+}
+
+.date {
+  padding-bottom: 3px;
+  font-style:italic;
+}
+
+.first-line {
+  padding-bottom: .25rem;
+  border-bottom: dashed 1px black;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #f2d9ef;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: .5rem;
+}
+
+/* Quiz Styling */
+
+
+
+  table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-example{
+    padding: 1rem;
+  }
+
+  .orientation{
+    text-align: center;
+  }
+
+  .treatmentinput{
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .quizmessage{
+    font-size: medium;
+    padding: 1rem;
+  }
+
+  .mybutton {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 12px;
+    border: 2px solid #f2d9ef;
+    background-color: #f2d9ef;
+    color: black;
+    text-align: center;
+
+  }
+
+  .mybutton:hover {
+    background-color:#e6acde;
+    border: 2px solid #e6acde;
+    color:#421a39;
+  }
+
+  .grid{
+    text-align: center;
+  }
+
+  th{
+    padding: 2em 2em 1em 1em;
+    text-align: center;
+  }
