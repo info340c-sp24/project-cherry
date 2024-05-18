@@ -439,7 +439,7 @@ textarea {
   margin-top: .5rem;
 }
 
-/* Quiz Styling */
+/* Quiz and Treatment Input Styling */
 
 
 
@@ -465,7 +465,13 @@ textarea {
   .quizmessage{
     font-size: medium;
     padding: 1rem;
+    text-align:center;
   }
+
+  .bye{
+    text-align: center;
+    text-decoration: solid;
+}
 
   .mybutton {
     display: inline-block;
