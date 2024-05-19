@@ -67,11 +67,16 @@ function Main() {
     )
 }
 
-export function JournalApp() {
+export default function JournalApp() {
+    return(
     <div>
         <JournalHeader />
         <main>
             <Main />
         </main>
     </div>
+    )
 }
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<JournalApp />);
