@@ -1,6 +1,8 @@
 import React from 'react';
 import './css/styles.css';
 import './css/styles.css';
+import {Navbar} from './navbar';
+import {Footer} from './footer';
 
 let journal_data = [
     {"key":"01", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
@@ -75,12 +77,17 @@ function Main() {
 
 export default function JournalApp() {
     return(
-    <div>
-        <JournalHeader />
-        <main>
-            <Main />
-        </main>
-    </div>
+        <div>
+            <Navbar />
+            <div>
+                <JournalHeader />
+                <main>
+                    <Main />
+                </main>
+            </div>
+            <Footer />
+        </div>
+   
     )
 }
 
