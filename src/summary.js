@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/styles.css';
 import {Footer} from './footer';
-import {Navbar} from './Navbar';
+import {Navbar} from './navbar';
 
 function SummaryHeader() {
   return (
