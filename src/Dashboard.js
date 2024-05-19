@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './dash.css';
 import Task from './Task';
 import {Navbar} from './navbar';
 import {Footer} from './footer';

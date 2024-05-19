@@ -256,3 +256,32 @@ li {
   display: flex;
   flex-direction: row;
 }
+
+/* Existing styles */
+
+/* Add styles for editing state */
+li.editing input {
+  border: 2px solid #e584cd;
+  outline: none;
+}
+
+li.editing input:focus {
+  border-color: #bf77b6;
+}
+
+/* Add styles for the add task button */
+.add-task-button {
+  background-color: #e584cd; /* Pink background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-button:hover {
+  background-color: #bf77b6; /* Slightly darker pink on hover */
+}
