@@ -15,32 +15,38 @@ function JournalHeader() {
         <header>
             <div>
                 <h1>Cherry Habit Tracker</h1>
-                <h2 class="subheader">Journal</h2>
+                <h2 className="subheader">Journal</h2>
             </div>
         </header>
     );
 }
 
 let Entry = function(entData) {
-    <div className="entry">
+    return (
+        <div className="entry">
         <h3>{entData.title}</h3>
         <p className="date"><time dateTime={entData.datetime}>{entData.date}</time></p>
         <p className="first-line">{entData.fline}</p>
-    </div>
+        </div>
+    )
+    
 }
 let EntryLG = function(entData) {
-    <div className="entry-lg">
+    return (
+        <div className="entry-lg">
         <h3>{entData.title}</h3>
         <p className="date"><time dateTime={entData.datetime}>{entData.date}</time></p>
         <p className="first-line">{entData.fline}</p>
-    </div>
+        </div>
+    )
+    
 }
 
 function Main() {
     
     return (
         <div className="content">
-            <section class="entries">
+            <section className="entries">
                 <div className="title">
                     <h2>Past Entries</h2>
                 </div>
@@ -53,7 +59,7 @@ function Main() {
                 <div className="title">
                     <h2 className ="current-title">Current Entry</h2>
                     
-                    <p className="date"><time datetime="2024-04-20">04-20-2024</time></p>
+                    <p className="date"><time dateTime="2024-04-20">04-20-2024</time></p>
                 </div>
                 <div id="write">
                     <form>
