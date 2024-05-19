@@ -12,6 +12,7 @@ const App = () => {
       <TreatmentQuiz></TreatmentQuiz>
       <JournalApp /> 
         <SummaryApp></SummaryApp>
+        
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/styles.css';
 // import { useHistory } from 'react-router-dom';
-
+import {Footer} from './footer';
 
 
 
@@ -73,6 +73,7 @@ export function IntroQuiz() {
               <a href="treatmentinput.html" class="mybutton">Next</a>
             </div>
           </div>
+          <Footer />
           </div>
 
     )
