@@ -201,6 +201,7 @@ body.summary-page main {
 .card-title{
   font-size: 15px;
 }
+
 .summary-container {
   margin: 20px auto;
 }
@@ -240,6 +241,7 @@ body.summary-page main {
 .summary-card-title {
   font-size: 0.8em;
   margin-bottom: 5px;
+  text-align: left; 
 }
 
 .summary-card-text {
@@ -254,7 +256,7 @@ body.summary-page main {
 .list-group-item {
   padding: 5px;
   border-bottom: 1px solid #ccc;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .card-text ul {
@@ -286,7 +288,7 @@ body.summary-page main {
   }
 
   .list-group-item {
-    font-size: 2.5em;
+    font-size: 1em;
   }
 
   .summary-card-img {
