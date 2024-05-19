@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/styles.css';
+import {Footer} from './footer';
+
 
 function SummaryHeader() {
     return (
@@ -68,6 +70,7 @@ make those edits later!
             
 
 </div>
+<Footer />
         </div>
     );
 }
