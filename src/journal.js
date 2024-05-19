@@ -1,17 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/journal.css">
-    
-    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Cherry Journal</title>
-</head>
+'use strict';
 
-<body>
+let journal_data = [
+    {"key":"01", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+    {"key":"02", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+    {"key":"03", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+    {"key":"04", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+    {"key":"05", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+    {"key":"06", "title":"Had a ___ day", "datetime": "2024-04-19", "date":"04/19/24", "fline":"this is the first line..."},
+]
+
+function HeadTitle(props) {
+    return <h1>Cherry Habit Tracker</h1>;
+}
+function SubTitle(props) {
+    return <h2 class="subheader">Journal</h2>;
+}
+
+function Header(props) {
+    return (
+        <header>
+            <HeadTitle />
+            <SubTitle />
+        </header>
+    );
+}
+
+let Entry = function(props) {
+    <div className="entry">
+        <h3>{props.title}</h3>
+        <p className="date"><time dateTime={props.datetime}>{props.date}</time></p>
+        <p className="first-line">{props.fline}</p>
+    </div>
+}
+let EntryLG = function(props) {
+    <div className="entry-lg">
+        <h3>{props.title}</h3>
+        <p className="date"><time dateTime={props.datetime}>{props.date}</time></p>
+        <p className="first-line">{props.fline}</p>
+    </div>
+}
+
+let Form = function(props) {
+    const form = document.querySelector(form);
+    
+}
+
+function Main(props) {
+    
+    return (
+        <div className="content">
+            <section class="entries">
+                <div className="title">
+                    <h2>Past Entries</h2>
+                </div>
+                {journal_data.map((entry, index) => {
+                    const EntryComponent = index <= 3 ? Entry : EntryLG;
+                    return <EntryComponent key={index} {...entry} />;
+                })}
+            </section>
+            <section className="page">
+                <div className="title">
+                    <h2 className ="current-title">Current Entry</h2>
+                    
+                    <p className="date"><time datetime="2024-04-20">04-20-2024</time></p>
+                </div>
+                <div id="write">
+                    
+                </div>
+            </section>
+        </div>
+    )
+}
+
+function 
+
+{/* <section class="page">
+                <div class="title">
+                    <h2 class="current-title">Current Entry</h2>
+                    <p class="date"><time datetime="2024-04-20">04-20-2024</time></p>
+                </div>
+                <div id="write">
+                    <form>
+                        <label for="current-entry">Current</label>
+                        <textarea id="current-entry" name="current-entry" rows="25"></textarea>
+                        <input id="save" type="submit" value="Save">
+                    </form>
+                </div>
+
+            </section> */}
+
+
+
+{/* /* <body>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -98,5 +178,4 @@
 
 
 
-</body>
-</html>
+</body> */ */}
