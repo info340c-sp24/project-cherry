@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './css/styles.css';
 // import { useHistory } from 'react-router-dom';
 import {Footer} from './footer';
+import { Navbar } from './navbar';
 
 
 
@@ -40,6 +41,7 @@ export function IntroQuiz() {
     };
     return (
         <div>
+        <Navbar />
         <SummaryHeader></SummaryHeader>
         <div className="orientation">
         <h2> Hello! Welcome to Cherry.</h2>
