@@ -20,8 +20,11 @@ export function TreatmentQuiz() {
             <section className="treatmentinput">
                 <h2>Input Your Treatment Tasks</h2>
                 <p className="quizmessage">
-                    Please list your daily tasks/goals and their frequencies below. To add more rows, 
-                    copy and paste a row in the box.
+                    Please list your daily tasks/goals and their frequencies below. 
+                    To add more rows, 
+                    copy and paste a row in the box. 
+                    Don't worry if you have to make changes to your daily routine, you can always
+make those edits later!
                 </p>
                 <div className="d-flex justify-content-center">
                     <div className="grid">
@@ -62,9 +65,8 @@ export function TreatmentQuiz() {
                 </div>
             </section>
             <div class='bye'>
-            <p>Don't worry if you have to make changes to your daily routine, you can always
-make those edits later!
-</p>
+            
+
 </div>
         </div>
     );
