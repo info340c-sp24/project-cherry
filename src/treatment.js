@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/styles.css';
 import {Footer} from './footer';
+import { Navbar } from './navbar';
+
 
 
 function SummaryHeader() {
@@ -18,6 +20,7 @@ function SummaryHeader() {
 export function TreatmentQuiz() {
     return (
         <div>
+            <Navbar />
             <SummaryHeader />
             <section className="treatmentinput">
                 <h2>Input Your Treatment Tasks</h2>
