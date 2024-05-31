@@ -72,7 +72,7 @@ export function IntroQuiz() {
               </form>
             </section>
             <div class="form-navigation">
-              <a href="treatmentinput.html" class="mybutton">Next</a>
+              <a href="treatmentinput.html" class="mybutton">Create Account</a>
             </div>
           </div>
           <Footer />
