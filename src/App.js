@@ -25,7 +25,7 @@ const App = () => {
 
   let content;
   
-  if(user !== null || user !== undefined){
+  if(user != null || user != undefined){
     content = (
       <>
         <Dashboard></Dashboard>
