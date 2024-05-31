@@ -3,10 +3,10 @@ import './css/styles.css';
 import {Footer} from './footer';
 import {Navbar} from './navbar';
 
-function SummaryHeader() {
+function SummaryHeader(props) {
   return (
     <header className="summary-header">
-      <h1>Name's Account</h1>
+      <h1>{props.user.displayName} Account</h1>
       <img src="images/profile-picture.png" alt="Profile Picture" className="profile-picture" />
     </header>
   );
@@ -26,33 +26,33 @@ function SummaryCard({ title, text, imgSrc, alt }) {
   );
 }
 
-export function SummaryApp() {
+export function SummaryApp(props) {
   return (
     <div>
       <Navbar />
-      <SummaryHeader />
+      <SummaryHeader user = {props.user}/>
       <main>
         <div className="summary-container">
           <div className="row">
-            <SummaryCard
+            <SummaryCard user = {props.user}
               title="CURRENT STREAK"
               text="0 Days"
               imgSrc="images/flame.png"
               alt="Red, Orange, and Yellow Flame Emoticon"
             />
-            <SummaryCard
+            <SummaryCard user = {props.user}
               title="TOTAL COMPLETED HABITS"
               text="0 Habits"
               imgSrc="images/graph.png"
               alt="Black bar graph, with three bars"
             />
-            <SummaryCard
+            <SummaryCard user = {props.user}
               title="GOALS"
               text="To have a healthy mindset"
               imgSrc="images/goal.png"
               alt="Circle dart board with dart on the center"
             />
-            <SummaryCard
+            <SummaryCard user = {props.user}
               title="PERSONAL DETAILS"
               text={
                 <ul className="list-group list-group-flush">
