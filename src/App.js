@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { getAuth } from 'firebase/auth';
+import { getAuth} from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import MySignInScreen from './MySignInScreen';

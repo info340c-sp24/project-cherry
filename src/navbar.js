@@ -1,8 +1,5 @@
 import React from 'react';
-//import './css/summary.css';
 import './css/styles.css';
-
-
 
 export function Navbar() {
     return (
@@ -16,3 +13,4 @@ export function Navbar() {
       </nav>
     );
   }
+

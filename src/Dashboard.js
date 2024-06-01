@@ -3,14 +3,14 @@ import './css/dash.css';
 import Task from './Task';
 import {Navbar} from './navbar';
 import {Footer} from './footer';
+import { db } from './index';
+import { ref, get, set } from 'firebase/database';
 
-function Dashboard() {
+function Dashboard( {userId} ) {
   const [todayTasks, setTodayTasks] = useState(['Task 1', 'Task 2', 'Task 3', 'Task 4']);
   const [weeklyTasks, setWeeklyTasks] = useState(['Task 1', 'Task 2', 'Task 3', 'Task 4']);
   const [newTask, setNewTask] = useState('');
-  const [completedTasksCount, setCompletedTasksCount] = useState(0); 
   
-
   const addTask = (setTasks, tasks) => {
     if (newTask.trim()) {
       setTasks([...tasks, newTask.trim()]);
@@ -21,8 +21,22 @@ function Dashboard() {
   const removeTask = (setTasks, tasks, index) => {
     const newTasks = tasks.filter((task, i) => i !== index);
     setTasks(newTasks);
-    //setCompletedTasksCount(completedTasksCount + 1);
+    const userRef = ref(db, `users/${userId}/removedTasksCount`);
 
+    // Get current count
+    get(userRef)
+      .then((snapshot) => {
+        const currentCount = snapshot.val() || 0;
+  
+        // Update count in the database
+        set(userRef, currentCount + 1)
+          .catch((error) => {
+            console.error('Error updating completed tasks count:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error for completed tasks count:', error);
+      });
   };
 
   const editTask = (setTasks, tasks, index, newTask) => {
