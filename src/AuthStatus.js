@@ -14,11 +14,6 @@ function AuthStatus() {
     return <p>Error: {error.message}</p>;
   }
 
-  if (user) {
-    return <p>Welcome, {user.displayName}!</p>;
-  } else {
-    return <p>Please sign in</p>;
-  }
 }
 
 export default AuthStatus;

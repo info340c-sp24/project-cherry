@@ -1,35 +1,15 @@
-.sign-in-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
+
   .sign-in-container h1 {
     font-size: 2em;
+    margin-top: 200px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .sign-in-container p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    text-align: center;
   }
+
   
-  .sign-in-container .firebaseui-card-content {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .sign-in-container .firebaseui-button {
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .sign-in-container .firebaseui-button:hover {
-    background-color: #357ae8;
-  }

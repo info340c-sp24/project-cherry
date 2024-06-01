@@ -6,7 +6,7 @@ import {Navbar} from './navbar';
 function SummaryHeader(props) {
   return (
     <header className="summary-header">
-      <h1>{props.user.displayName} Account</h1>
+      <h1>{props.user.displayName}'s Account</h1>
       <img src="images/profile-picture.png" alt="Profile Picture" className="profile-picture" />
     </header>
   );
@@ -42,7 +42,7 @@ export function SummaryApp(props) {
             />
             <SummaryCard user = {props.user}
               title="TOTAL COMPLETED HABITS"
-              text="0 Habits"
+              text={`${props.completedTasks} Habits`} 
               imgSrc="images/graph.png"
               alt="Black bar graph, with three bars"
             />
@@ -56,9 +56,8 @@ export function SummaryApp(props) {
               title="PERSONAL DETAILS"
               text={
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Name: ava</li>
-                  <li className="list-group-item">Email: ava19@gmail.com</li>
-                  <li className="list-group-item">Age: 20</li>
+                  <li className="list-group-item">Name: {props.user.displayName}</li>
+                  <li className="list-group-item">Email: {props.user.email}</li>
                 </ul>
               }
               imgSrc="images/notepad.png"

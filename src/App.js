@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import MySignInScreen from './MySignInScreen';
 import AuthStatus from './AuthStatus';
@@ -14,6 +15,7 @@ import 'firebaseui/dist/firebaseui.css';
 const App = () => {
   const auth = getAuth();
   const [user, loading, error] = useAuthState(auth);
+  const db = getDatabase();
 
   if (loading) {
     return<p>Loading...</p>;
@@ -24,7 +26,8 @@ const App = () => {
   }
 
   let content;
-  
+
+  console.log(user);
   if(user != null || user != undefined){
     content = (
       <>

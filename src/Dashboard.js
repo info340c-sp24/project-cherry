@@ -8,6 +8,8 @@ function Dashboard() {
   const [todayTasks, setTodayTasks] = useState(['Task 1', 'Task 2', 'Task 3', 'Task 4']);
   const [weeklyTasks, setWeeklyTasks] = useState(['Task 1', 'Task 2', 'Task 3', 'Task 4']);
   const [newTask, setNewTask] = useState('');
+  const [completedTasksCount, setCompletedTasksCount] = useState(0); 
+  
 
   const addTask = (setTasks, tasks) => {
     if (newTask.trim()) {
@@ -19,6 +21,8 @@ function Dashboard() {
   const removeTask = (setTasks, tasks, index) => {
     const newTasks = tasks.filter((task, i) => i !== index);
     setTasks(newTasks);
+    //setCompletedTasksCount(completedTasksCount + 1);
+
   };
 
   const editTask = (setTasks, tasks, index, newTask) => {
