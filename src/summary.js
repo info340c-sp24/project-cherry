@@ -2,17 +2,26 @@ import React, { useEffect, useState } from 'react';
 import './css/summary.css';
 import {Footer} from './footer';
 import {Navbar} from './navbar';
-import { ref, get } from 'firebase/database';
+import { ref, get, update } from 'firebase/database';
 import { db } from './index';
 import SummaryHeader from './summaryHeader';
 
 //<img src="images/profile-picture.png" alt="Profile Picture" className="profile-picture" />
 
-function SummaryCard({ title, text, imgSrc, alt }) {
+function SummaryCard({ title, text, imgSrc, alt, user }) {
+
   const [editableText, setEditableText] = useState(text);
 
   const handleTextChange = (event) => {
     setEditableText(event.target.innerText);
+  };
+
+  const handleBlur = () => {
+    // Update user's goal in Firebase
+    const userRef = ref(db, `users/${user.uid}/goal`);
+    update(userRef, { goal: editableText })
+      .then(() => console.log("Goal updated successfully"))
+      .catch((error) => console.error('Error updating goal:', error));
   };
 
   let summaryContent;
@@ -22,7 +31,7 @@ function SummaryCard({ title, text, imgSrc, alt }) {
         className="summary-card-text"
         contentEditable="true"
         onBlur={handleTextChange}
-      ></p>
+        onInput={handleTextChange}>{editableText}</p>
     );
   } else {
     summaryContent = <p className="summary-card-text">{text}</p>;
@@ -43,6 +52,7 @@ function SummaryCard({ title, text, imgSrc, alt }) {
 
 export function SummaryApp({ user }) {
   const [completedTasks, setCompletedTasks] = useState(0);
+  const [goal, setGoal] = useState("");
 
   useEffect(() => {
     const userRef = ref(db, `users/${user.uid}/completedTasks`);
@@ -54,7 +64,22 @@ export function SummaryApp({ user }) {
       .catch((error) => {
         console.error('Error fetching completed tasks count:', error);
       });
+
+    const userGoalRef = ref(db, `users/${user.uid}/goal`);
+    get(userGoalRef)
+      .then((snapshot) => {
+        const goalData = snapshot.val();
+        if (goalData && typeof goalData.goal === 'string') {
+          setGoal(goalData.goal);
+        } else {
+          setGoal(""); // Ensure goal is a string
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching user goal:', error);
+      });
   }, [user.uid]);
+
 
   return (
     <div>
@@ -77,7 +102,7 @@ export function SummaryApp({ user }) {
             />
             <SummaryCard user = {user}
               title="GOALS"
-              text="To have a healthy mindset"
+              text={goal}
               imgSrc="images/goal.png"
               alt="Circle dart board with dart on the center"
             />
@@ -99,4 +124,3 @@ export function SummaryApp({ user }) {
     </div>
   );
 }
-
