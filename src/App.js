@@ -7,7 +7,7 @@ import MySignInScreen from './MySignInScreen';
 import AuthStatus from './AuthStatus';
 import {SummaryApp} from './summary';
 // import { IntroQuiz } from './quiz';
-import { TreatmentQuiz } from './treatment';
+// import { TreatmentQuiz } from './treatment';
 import JournalApp  from './journal';
 import Dashboard from './Dashboard';
 import 'firebaseui/dist/firebaseui.css';
@@ -33,7 +33,7 @@ const App = () => {
       <>
         <Dashboard></Dashboard>
           {/* <IntroQuiz></IntroQuiz> */}
-          <TreatmentQuiz></TreatmentQuiz>
+          {/*<TreatmentQuiz></TreatmentQuiz>*/}
           <JournalApp /> 
             <SummaryApp user = {user}></SummaryApp>
       </>
