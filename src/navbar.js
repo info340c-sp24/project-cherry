@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './css/styles.css';
-import JournalApp from './journal';
-import Dashboard from './Dashboard';
-import { SummaryApp } from './summary';
+// import JournalApp from './journal';
+// import Dashboard from './Dashboard';
+// import { SummaryApp } from './summary';
 
-export function Navbar() {
+export function Navbar() {  
     return (
         <nav>
             <ul>
@@ -14,11 +14,11 @@ export function Navbar() {
                 <li><Link to="/summary">Summary</Link></li>
                 <li><Link to="/quiz">Quiz</Link></li>
             </ul>
-            <Routes>
+            {/* <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/journal" element={<JournalApp />} />
                 <Route path="/summary" element={<SummaryApp />} />
-            </Routes>
+            </Routes> */}
         </nav>
     );
 }
