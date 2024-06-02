@@ -32,7 +32,7 @@ const App = () => {
     content = (
       <>
         <Dashboard></Dashboard>
-          <IntroQuiz></IntroQuiz>
+          {/* <IntroQuiz></IntroQuiz> */}
           <TreatmentQuiz></TreatmentQuiz>
           <JournalApp /> 
             <SummaryApp user = {user}></SummaryApp>
