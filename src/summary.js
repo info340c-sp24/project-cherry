@@ -13,11 +13,9 @@ function SummaryCard({ title, text, imgSrc, alt, user }) {
    setEditableText(text);
  }, [text]);
 
-
  const handleTextChange = (event) => {
    setEditableText(event.target.innerText);
  };
-
 
  const handleBlur = () => {
    if (title === "GOALS") {
@@ -62,7 +60,7 @@ function SummaryCard({ title, text, imgSrc, alt, user }) {
 export function SummaryApp({ user }) {
  const [completedTasks, setCompletedTasks] = useState(0);
  const [goal, setGoal] = useState("");
-
+ const [streakCount, setStreakCount] = useState(0);
 
  useEffect(() => {
   if (!user || !user.uid) {
@@ -72,15 +70,19 @@ export function SummaryApp({ user }) {
 
   const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
   const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
+  const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
 
   Promise.all([
     get(completedDailyTasksRef),
-    get(completedWeeklyTasksRef)
+    get(completedWeeklyTasksRef),
+    get(streakCountRef)
   ])
-  .then(([dailySnapshot, weeklySnapshot]) => {
+  .then(([dailySnapshot, weeklySnapshot, streakSnapshot]) => {
     const completedDailyTasksCount = dailySnapshot.val() || 0;
     const completedWeeklyTasksCount = weeklySnapshot.val() || 0;
+    const streakCountData = streakSnapshot.val() || 0;
     setCompletedTasks(completedDailyTasksCount + completedWeeklyTasksCount);
+    setStreakCount(streakCountData);
   })
   .catch((error) => {
     console.error('Error getting completed tasks count:', error);
@@ -112,12 +114,12 @@ export function SummaryApp({ user }) {
          <div className="row">
            <SummaryCard user = {user}
              title="CURRENT STREAK"
-             text="0 Days"
+             text={`${streakCount} Days`}
              imgSrc="images/flame.png"
              alt="Red, Orange, and Yellow Flame Emoticon"
            />
            <SummaryCard user = {user}
-             title="TOTAL COMPLETED HABITS"
+             title="TOTAL COMPLETED TASKS"
              text={`${completedTasks} Tasks`}
              imgSrc="images/graph.png"
              alt="Black bar graph, with three bars"

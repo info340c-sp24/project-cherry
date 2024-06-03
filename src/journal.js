@@ -141,7 +141,7 @@ import React, { useState, useEffect } from 'react';
 import './css/journal.css';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
-import { ref, get, push } from 'firebase/database';
+import { ref, get, push, set, onValue } from 'firebase/database';
 import { db } from './index';
 
 function JournalHeader() {
@@ -161,9 +161,17 @@ function JournalApp({ user }) {
     const [writtenBefore, setWrittenBefore] = useState('');
     const [writtenAfter, setWrittenAfter] = useState('');
     const [journalData, setJournalData] = useState([]);
+    const [streakCount, setStreakCount] = useState(null);
 
     useEffect(() => {
         const journalRef = ref(db, `users/${user.uid}/journal`);
+        const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
+
+        onValue(streakCountRef, (snapshot) => {
+            const data = snapshot.val();
+            setStreakCount(data ? data : []);
+          });
+
         get(journalRef)
             .then((snapshot) => {
                 const journalEntries = snapshot.val() || [];
@@ -173,6 +181,7 @@ function JournalApp({ user }) {
                 console.error('Error fetching journal data:', error);
             });
     }, [user.uid]);
+
 
     const handlePageChange = (page) => {
         setDisplayContent(page);
@@ -191,11 +200,34 @@ function JournalApp({ user }) {
             date: new Date().toLocaleDateString(),
         };
         const journalRef = ref(db, `users/${user.uid}/journal`);
+        const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
         push(journalRef, newEntry)
             .then(() => {
                 setJournalData((prevData) => [...prevData, newEntry]);
                 setEntryData({ title: '', fline: '' });
                 setDisplayContent('CurrentWrite');
+                const lastEntry = journalData[journalData.length - 1];
+                if (journalData.length === 0) {
+                    // First journal entry
+                    setStreakCount(1);
+                    set(streakCountRef, 1);
+                }else{
+                    const lastDate = new Date(lastEntry.datetime).toLocaleDateString();
+                    const currentDate = new Date().toLocaleDateString();
+
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    const yesterdayDate = yesterday.toLocaleDateString();
+
+                    if (lastDate === yesterdayDate) {
+                        const newStreak = streakCount + 1;
+                        setStreakCount(newStreak);
+                        set(streakCountRef, newStreak);
+                    } else if (lastDate !== currentDate) {
+                        setStreakCount(1);
+                        set(streakCountRef, 1);
+                    }
+                } 
             })
             .catch((error) => {
                 console.error('Error saving journal entry:', error);
