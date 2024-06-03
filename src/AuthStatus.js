@@ -15,5 +15,4 @@ function AuthStatus() {
   }
 
 }
-
 export default AuthStatus;

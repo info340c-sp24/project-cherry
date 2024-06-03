@@ -6,8 +6,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import MySignInScreen from './MySignInScreen';
 import AuthStatus from './AuthStatus';
 import {SummaryApp} from './summary';
-import { IntroQuiz } from './quiz';
-import { TreatmentQuiz } from './treatment';
+// import { IntroQuiz } from './quiz';
+// import { TreatmentQuiz } from './treatment';
 import JournalApp  from './journal';
 import Dashboard from './Dashboard';
 import 'firebaseui/dist/firebaseui.css';
@@ -31,11 +31,11 @@ const App = () => {
   if(user != null || user != undefined){
     content = (
       <>
-        {/* <Dashboard></Dashboard> */}
+        <Dashboard></Dashboard>
           {/* <IntroQuiz></IntroQuiz> */}
-          {/* <TreatmentQuiz></TreatmentQuiz> */}
-          <JournalApp user = {user} />
-            {/* <SummaryApp user = {user}></SummaryApp> */}
+          {/*<TreatmentQuiz></TreatmentQuiz>*/}
+          <JournalApp /> 
+            <SummaryApp user = {user}></SummaryApp>
       </>
     );
   } else {

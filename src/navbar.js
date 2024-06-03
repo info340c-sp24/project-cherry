@@ -1,16 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './css/styles.css';
+// import JournalApp from './journal';
+// import Dashboard from './Dashboard';
+// import { SummaryApp } from './summary';
 
-export function Navbar() {
+export function Navbar() {  
     return (
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="journal.html">Journal</a></li>
-          <li><a href="summary.html">Summary</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/journal">Journal</Link></li>
+                <li><Link to="/summary">Summary</Link></li>
+                <li><Link to="/quiz">Quiz</Link></li>
+            </ul>
+            {/* <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/journal" element={<JournalApp />} />
+                <Route path="/summary" element={<SummaryApp />} />
+            </Routes> */}
+        </nav>
     );
-  }
-
+}

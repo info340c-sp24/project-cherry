@@ -5,6 +5,7 @@ import {Navbar} from './navbar';
 import {Footer} from './footer';
 import { db } from './index';
 import { ref, get, set } from 'firebase/database';
+import SummaryCarousel from './SummaryCarousel';
 
 function Dashboard( {userId} ) {
   const [todayTasks, setTodayTasks] = useState(['Task 1', 'Task 2', 'Task 3', 'Task 4']);
@@ -95,9 +96,7 @@ function Dashboard( {userId} ) {
           <div className="thirds">
             <article>
               <h2>Summary</h2>
-              <p>20 tasks completed this week</p>
-              <p>3 tasks completed today</p>
-              <img className="placeholder" src="/images/graph_placeholder.webp" alt="Habit tracker graph" />
+              <SummaryCarousel /> {/* Render SummaryCarousel component */}
             </article>
             <article>
               <h2>Journal</h2>
