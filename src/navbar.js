@@ -12,7 +12,6 @@ export function Navbar() {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/journal">Journal</Link></li>
                 <li><Link to="/summary">Summary</Link></li>
-                <li><Link to="/quiz">Quiz</Link></li>
             </ul>
             {/* <Routes>
                 <Route path="/" element={<Dashboard />} />
