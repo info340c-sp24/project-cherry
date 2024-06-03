@@ -1,7 +1,8 @@
-header {
-  margin-top: 200px;
-  margin-bottom: 10px;
+.header {
+  margin-top: 100px;
 }
+
+
 
 .content {
   display: flex;
@@ -10,12 +11,13 @@ header {
 }
 
 .entries {
-  min-width: 150px;
+  min-width: 125px;
   flex: 1;
   padding-right:.5rem;
   border-right: solid 2px #e6acde;
   height: calc(100vh - 200px); /* Set a specific height for the entries section */
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .entry {
@@ -27,6 +29,7 @@ header {
 }
 
 .page {
+  min-width: 200px;
   padding-left: 1rem;
   flex: content;
 }
@@ -76,6 +79,10 @@ p {
   margin-bottom: 1em;
 }
 
+.first-line-long {
+  display:none;
+}
+
 .filter-options {
   display:flex;
   flex-direction:column;
@@ -97,6 +104,7 @@ p {
 
 .current-entry {
   height: 60vh;
+  width: 100%;
   background-color: #f2d9ef;
   border: none;
   border-radius: 10px;
@@ -115,6 +123,15 @@ button {
     border-right: solid 2px #e6acde;
     height: calc(100vh - 200px); /* Set a specific height for the entries section */
     overflow-y: auto;
+  }
+
+  .first-line {
+    display:none;
+  }
+
+  .first-line-long {
+    display: contents;
+    border-bottom: dashed 1px black;
   }
 }
 
