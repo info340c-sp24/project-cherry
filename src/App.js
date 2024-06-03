@@ -11,6 +11,7 @@ import {SummaryApp} from './summary';
 import JournalApp  from './journal';
 import Dashboard from './Dashboard';
 import 'firebaseui/dist/firebaseui.css';
+import { Navbar } from './navbar';
 
 const App = () => {
   const auth = getAuth();
@@ -31,11 +32,11 @@ const App = () => {
   if(user != null || user != undefined){
     content = (
       <>
-        <Dashboard></Dashboard>
+        {/* <Dashboard></Dashboard> */}
           {/* <IntroQuiz></IntroQuiz> */}
           {/*<TreatmentQuiz></TreatmentQuiz>*/}
-          <JournalApp user={user} /> 
-            <SummaryApp user = {user}></SummaryApp>
+          <JournalApp user={user} />
+            {/* <SummaryApp user = {user}></SummaryApp> */}
       </>
     );
   } else {
@@ -47,14 +48,30 @@ const App = () => {
     );
   }
 
-  return(
+  return (
     <Router>
-      <div>
-        <AuthStatus />
-        {content}
-      </div>
+        <div>
+            <AuthStatus />
+            <Navbar />
+            <Routes>
+                {user ? (
+                    <>
+                        <Route path="/" element={<Dashboard />} />
+                        {/* <Route path="/journal" element={<JournalApp />} /> */}
+                        <Route path="/summary" element={<SummaryApp user={user} />} />
+                        {/* <Route path="/quiz" element={<IntroQuiz />} /> */}
+                        {/* <Route path="/treatment" element={<TreatmentQuiz />} /> */}
+                    </>
+                ) : (
+                    <>
+                        <Route path="/login" element={<MySignInScreen />} />
+                        <Route path="*" element={<MySignInScreen />} />
+                    </>
+                )}
+            </Routes>
+        </div>
     </Router>
-  );
+);
 }
 
 export default App
