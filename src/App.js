@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import MySignInScreen from './MySignInScreen';
 import AuthStatus from './AuthStatus';
 import {SummaryApp} from './summary';
-// import { IntroQuiz } from './quiz';
+import { IntroQuiz } from './quiz';
 import { TreatmentQuiz } from './treatment';
 import JournalApp  from './journal';
 import Dashboard from './Dashboard';
@@ -34,7 +34,7 @@ const App = () => {
         {/* <Dashboard></Dashboard> */}
           {/* <IntroQuiz></IntroQuiz> */}
           {/* <TreatmentQuiz></TreatmentQuiz> */}
-          <JournalApp /> 
+          <JournalApp user = {user} />
             {/* <SummaryApp user = {user}></SummaryApp> */}
       </>
     );
