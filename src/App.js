@@ -1,14 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { getAuth} from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import MySignInScreen from './MySignInScreen';
 import AuthStatus from './AuthStatus';
-import {SummaryApp} from './summary';
-// import { IntroQuiz } from './quiz';
-// import { TreatmentQuiz } from './treatment';
-import JournalApp  from './journal';
+import { SummaryApp } from './summary';
+import JournalApp from './journal';
 import Dashboard from './Dashboard';
 import 'firebaseui/dist/firebaseui.css';
 import { Navbar } from './navbar';
@@ -19,59 +17,35 @@ const App = () => {
   const db = getDatabase();
 
   if (loading) {
-    return<p>Loading...</p>;
+    return <p>Loading...</p>;
   }
 
-  if (error){
+  if (error) {
     return <p>Error: {error.message}</p>;
-  }
-
-  let content;
-
-  console.log(user);
-  if(user != null || user != undefined){
-    content = (
-      <>
-        {/* <Dashboard user = {user}></Dashboard> */}
-          {/* <IntroQuiz></IntroQuiz> */}
-          {/*<TreatmentQuiz></TreatmentQuiz>*/}
-          <JournalApp user={user} />
-            {/* <SummaryApp user = {user}></SummaryApp> */}
-      </>
-    );
-  } else {
-    content = (
-      <Routes>
-        <Route path="/login" element={<MySignInScreen />} />
-        <Route path="*" element={<MySignInScreen />} />
-      </Routes>
-    );
   }
 
   return (
     <Router>
-        <div>
-            <AuthStatus />
-            <Navbar />
-            <Routes>
-                {user ? (
-                    <>
-                        <Route path="/" element={<Dashboard />} />
-                        <Route path="/journal" element={<JournalApp user={user} />} />
-                        <Route path="/summary" element={<SummaryApp user={user} />} />
-                        {/* <Route path="/quiz" element={<IntroQuiz />} /> */}
-                        {/* <Route path="/treatment" element={<TreatmentQuiz />} /> */}
-                    </>
-                ) : (
-                    <>
-                        <Route path="/login" element={<MySignInScreen />} />
-                        <Route path="*" element={<MySignInScreen />} />
-                    </>
-                )}
-            </Routes>
-        </div>
+      <div>
+        <AuthStatus />
+        <Navbar />
+        <Routes>
+          {user ? (
+            <>
+              <Route path="/" element={<Dashboard user={user} />} />
+              <Route path="/journal" element={<JournalApp user={user} />} />
+              <Route path="/summary" element={<SummaryApp user={user} />} />
+            </>
+          ) : (
+            <>
+              <Route path="/login" element={<MySignInScreen />} />
+              <Route path="*" element={<MySignInScreen />} />
+            </>
+          )}
+        </Routes>
+      </div>
     </Router>
-);
-}
+  );
+};
 
-export default App
+export default App;

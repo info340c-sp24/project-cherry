@@ -7,7 +7,7 @@ import { db } from './index';
 import { ref, get, set, onValue } from 'firebase/database';
 import SummaryCarousel from './SummaryCarousel';
 
-function Dashboard({ userId }) {
+function Dashboard({ user }) {
   const [todayTasks, setTodayTasks] = useState([]);
   const [weeklyTasks, setWeeklyTasks] = useState([]);
   const [newTodayTask, setNewTodayTask] = useState('');
@@ -16,10 +16,15 @@ function Dashboard({ userId }) {
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
 
   useEffect(() => {
-    const todayTasksRef = ref(db, `users/${userId}/todayTasks`);
-    const weeklyTasksRef = ref(db, `users/${userId}/weeklyTasks`);
-    const completedDailyTasksRef = ref(db, `users/${userId}/completedDailyTasks`);
-    const completedWeeklyTasksRef = ref(db, `users/${userId}/completedWeeklyTasks`);
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
+    const todayTasksRef = ref(db, `users/${user.uid}/todayTasks`);
+    const weeklyTasksRef = ref(db, `users/${user.uid}/weeklyTasks`);
+    const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
+    const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
 
     onValue(todayTasksRef, (snapshot) => {
       const data = snapshot.val();
@@ -40,50 +45,74 @@ function Dashboard({ userId }) {
       const data = snapshot.val();
       setCompletedWeeklyTasks(data ? data : 0);
     });
-  }, [userId]);
+  }, [user]);
 
   const addTask = (setTasks, tasks, newTask, setNewTask, taskType) => {
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
     if (newTask.trim()) {
       const updatedTasks = [...tasks, newTask.trim()];
       setTasks(updatedTasks);
       setNewTask('');
-      const taskRef = ref(db, `users/${userId}/${taskType}`);
+      const taskRef = ref(db, `users/${user.uid}/${taskType}`);
       set(taskRef, updatedTasks);
     }
   };
 
   const removeTask = (setTasks, tasks, index, taskType) => {
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
     const updatedTasks = tasks.filter((task, i) => i !== index);
     setTasks(updatedTasks);
-    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    const taskRef = ref(db, `users/${user.uid}/${taskType}`);
     set(taskRef, updatedTasks);
   };
 
   const editTask = (setTasks, tasks, index, newTask, taskType) => {
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
     const updatedTasks = tasks.map((task, i) => (i === index ? newTask : task));
     setTasks(updatedTasks);
-    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    const taskRef = ref(db, `users/${user.uid}/${taskType}`);
     set(taskRef, updatedTasks);
   };
 
   const completeTask = (setTasks, tasks, index, isDaily, taskType) => {
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
     const updatedTasks = tasks.filter((task, i) => i !== index);
     setTasks(updatedTasks);
-    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    const taskRef = ref(db, `users/${user.uid}/${taskType}`);
     set(taskRef, updatedTasks);
 
     if (isDaily) {
       const newCount = completedDailyTasks + 1;
       setCompletedDailyTasks(newCount);
-      const countRef = ref(db, `users/${userId}/completedDailyTasks`);
+      const countRef = ref(db, `users/${user.uid}/completedDailyTasks`);
       set(countRef, newCount);
     } else {
       const newCount = completedWeeklyTasks + 1;
       setCompletedWeeklyTasks(newCount);
-      const countRef = ref(db, `users/${userId}/completedWeeklyTasks`);
+      const countRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
       set(countRef, newCount);
     }
   };
+
+  if (!user || !user.uid) {
+    return <div>Loading...</div>; // Show a loading message or spinner
+  }
 
   return (
     <div>

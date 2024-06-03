@@ -1,10 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SummaryCarousel({ completedDailyTasks, completedWeeklyTasks }) {
   return (
-    <div className="carousel-container"> {/* Scoped CSS container */}
+    <div className="carousel-container">
       <Carousel>
         <Carousel.Item>
           <h3>0 Day Streak</h3>
