@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Task({ task, onRemove, onEdit }) {
+function Task({ task, onRemove, onEdit, onComplete }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState(task);
 
@@ -43,6 +43,12 @@ function Task({ task, onRemove, onEdit }) {
             alt="Remove"
             className="icon remove"
             onClick={handleRemove}
+          />
+          <img
+            src="/images/complete_btn.png"
+            alt="Complete"
+            className="icon complete"
+            onClick={onComplete}
           />
         </>
       )}

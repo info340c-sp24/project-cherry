@@ -34,7 +34,7 @@ const App = () => {
         {/* <Dashboard></Dashboard> */}
           {/* <IntroQuiz></IntroQuiz> */}
           {/*<TreatmentQuiz></TreatmentQuiz>*/}
-          <JournalApp user={user} /> 
+          <JournalApp user={user} />
             {/* <SummaryApp user = {user}></SummaryApp> */}
       </>
     );
