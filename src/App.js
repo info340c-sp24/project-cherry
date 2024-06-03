@@ -57,7 +57,7 @@ const App = () => {
                 {user ? (
                     <>
                         <Route path="/" element={<Dashboard />} />
-                        {/* <Route path="/journal" element={<JournalApp />} /> */}
+                        <Route path="/journal" element={<JournalApp user={user} />} />
                         <Route path="/summary" element={<SummaryApp user={user} />} />
                         {/* <Route path="/quiz" element={<IntroQuiz />} /> */}
                         {/* <Route path="/treatment" element={<TreatmentQuiz />} /> */}
