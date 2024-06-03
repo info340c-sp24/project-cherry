@@ -6,10 +6,6 @@ import { ref, get, update } from 'firebase/database';
 import { db } from './index';
 import SummaryHeader from './summaryHeader';
 
-
-//<img src="images/profile-picture.png" alt="Profile Picture" className="profile-picture" />
-
-
 function SummaryCard({ title, text, imgSrc, alt, user }) {
  const [editableText, setEditableText] = useState(text);
 
@@ -69,15 +65,26 @@ export function SummaryApp({ user }) {
 
 
  useEffect(() => {
-   const userRef = ref(db, `users/${user.uid}/completedTasks`);
-   get(userRef)
-     .then((snapshot) => {
-       const completedTasksCount = snapshot.val() || 0;
-       setCompletedTasks(completedTasksCount);
-     })
-     .catch((error) => {
-       console.error('Error fetching completed tasks count:', error);
-     });
+  if (!user || !user.uid) {
+    console.error("User or user.uid is undefined");
+    return;
+  }
+
+  const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
+  const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
+
+  Promise.all([
+    get(completedDailyTasksRef),
+    get(completedWeeklyTasksRef)
+  ])
+  .then(([dailySnapshot, weeklySnapshot]) => {
+    const completedDailyTasksCount = dailySnapshot.val() || 0;
+    const completedWeeklyTasksCount = weeklySnapshot.val() || 0;
+    setCompletedTasks(completedDailyTasksCount + completedWeeklyTasksCount);
+  })
+  .catch((error) => {
+    console.error('Error getting completed tasks count:', error);
+  });
 
 
  const userGoalRef = ref(db, `users/${user.uid}/goal`);
@@ -91,7 +98,7 @@ export function SummaryApp({ user }) {
        }
      })
      .catch((error) => {
-       console.error('Error fetching user goal:', error);
+       console.error('Error getting user goal:', error);
      });
    }, [user.uid]);
 
@@ -111,7 +118,7 @@ export function SummaryApp({ user }) {
            />
            <SummaryCard user = {user}
              title="TOTAL COMPLETED HABITS"
-             text={`${completedTasks} Habits`}
+             text={`${completedTasks} Tasks`}
              imgSrc="images/graph.png"
              alt="Black bar graph, with three bars"
            />
