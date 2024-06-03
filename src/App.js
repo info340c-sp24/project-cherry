@@ -27,7 +27,6 @@ const App = () => {
   return (
     <Router>
       <div>
-        {/* Navbar not displayed unless user is logged in */}
         {user && <Navbar />}
         <Routes>
           {user ? (

@@ -141,6 +141,7 @@ function Dashboard({ user }) {
               value={newTodayTask}
               onChange={(e) => setNewTodayTask(e.target.value)}
               placeholder="Add new task"
+              aria-label="Add new task for today"
             />
             <button className="add-task-button" onClick={() => addTask(setTodayTasks, todayTasks, newTodayTask, setNewTodayTask, 'todayTasks')}>Add Task</button>
           </article>
