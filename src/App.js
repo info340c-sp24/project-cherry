@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -27,18 +27,21 @@ const App = () => {
   return (
     <Router>
       <div>
-        {/* Navbar not displayed unless user is logged in */}
         {user && <Navbar />}
         <Routes>
           {user ? (
             <>
-              <Route path="/" element={<Dashboard user={user} />} />
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<Dashboard user={user} />} />
               <Route path="/journal" element={<JournalApp user={user} />} />
               <Route path="/summary" element={<SummaryApp user={user} />} />
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </>
           ) : (
             <>
-              <Route path="*" element={<MySignInScreen />} />
+              <Route path="/login" element={<MySignInScreen />} />
+              {/* <Route path="*" element={<MySignInScreen replace />} /> */}
+              <Route path="*" element={<Navigate to="/login" replace />} />
             </>
           )}
         </Routes>
