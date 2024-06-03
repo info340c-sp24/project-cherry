@@ -31,11 +31,11 @@ const App = () => {
   if(user != null || user != undefined){
     content = (
       <>
-        <Dashboard></Dashboard>
+        {/* <Dashboard></Dashboard> */}
           {/* <IntroQuiz></IntroQuiz> */}
           {/*<TreatmentQuiz></TreatmentQuiz>*/}
-          <JournalApp /> 
-            <SummaryApp user = {user}></SummaryApp>
+          <JournalApp user={user} /> 
+            {/* <SummaryApp user = {user}></SummaryApp> */}
       </>
     );
   } else {
