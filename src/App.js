@@ -32,7 +32,7 @@ const App = () => {
   if(user != null || user != undefined){
     content = (
       <>
-        {/* <Dashboard></Dashboard> */}
+        {/* <Dashboard user = {user}></Dashboard> */}
           {/* <IntroQuiz></IntroQuiz> */}
           {/*<TreatmentQuiz></TreatmentQuiz>*/}
           <JournalApp user={user} />

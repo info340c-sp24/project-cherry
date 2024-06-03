@@ -211,46 +211,45 @@ textarea {
   box-sizing: border-box;
 }
 
-/*
-* Icon styles
-*/
+/* Icon styles */
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   padding-left: 5px;
+  border-radius: 50%; /* Make icons circular */
 }
 
-.edit, .remove {
-  margin-left: 10px;
-}
-
-.add {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  cursor: pointer;
-}
-
-article {
-  position: relative;
-  padding: 15px;
-  overflow: hidden;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
+.edit, .remove, .complete {
+  margin-left: 15px;
+  margin-right: 5px; /* Add space to the right */
 }
 
 li {
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center; /* Align items in the center */
+  justify-content: space-between; /* Distribute space evenly */
 }
+
+li > span {
+  flex-grow: 1; /* Allow the text to take up available space */
+}
+
+/* Ensure buttons are more towards the right side */
+li > .icon-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Add this to position the icons correctly */
+li > .icon-container img {
+  margin-left: 10px;
+}
+
+li.editing input {
+  flex-grow: 1; /* Allow input to take up available space */
+}
+
 
 /* journal css */
 .content {

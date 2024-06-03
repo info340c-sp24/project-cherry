@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/dash.css';
 import Task from './Task';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
 import { db } from './index';
-import { ref, get, set } from 'firebase/database';
+import { ref, get, set, onValue } from 'firebase/database';
 import SummaryCarousel from './SummaryCarousel';
 
 function Dashboard({ userId }) {
@@ -15,45 +15,73 @@ function Dashboard({ userId }) {
   const [completedDailyTasks, setCompletedDailyTasks] = useState(0);
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
 
-  const addTask = (setTasks, tasks, newTask, setNewTask) => {
+  useEffect(() => {
+    const todayTasksRef = ref(db, `users/${userId}/todayTasks`);
+    const weeklyTasksRef = ref(db, `users/${userId}/weeklyTasks`);
+    const completedDailyTasksRef = ref(db, `users/${userId}/completedDailyTasks`);
+    const completedWeeklyTasksRef = ref(db, `users/${userId}/completedWeeklyTasks`);
+
+    onValue(todayTasksRef, (snapshot) => {
+      const data = snapshot.val();
+      setTodayTasks(data ? data : []);
+    });
+
+    onValue(weeklyTasksRef, (snapshot) => {
+      const data = snapshot.val();
+      setWeeklyTasks(data ? data : []);
+    });
+
+    onValue(completedDailyTasksRef, (snapshot) => {
+      const data = snapshot.val();
+      setCompletedDailyTasks(data ? data : 0);
+    });
+
+    onValue(completedWeeklyTasksRef, (snapshot) => {
+      const data = snapshot.val();
+      setCompletedWeeklyTasks(data ? data : 0);
+    });
+  }, [userId]);
+
+  const addTask = (setTasks, tasks, newTask, setNewTask, taskType) => {
     if (newTask.trim()) {
-      setTasks([...tasks, newTask.trim()]);
+      const updatedTasks = [...tasks, newTask.trim()];
+      setTasks(updatedTasks);
       setNewTask('');
+      const taskRef = ref(db, `users/${userId}/${taskType}`);
+      set(taskRef, updatedTasks);
     }
   };
 
-  const removeTask = (setTasks, tasks, index) => {
-    const newTasks = tasks.filter((task, i) => i !== index);
-    setTasks(newTasks);
-    const userRef = ref(db, `users/${userId}/removedTasksCount`);
-
-    // Get current count
-    get(userRef)
-      .then((snapshot) => {
-        const currentCount = snapshot.val() || 0;
-
-        // Update count in the database
-        set(userRef, currentCount + 1).catch((error) => {
-          console.error('Error updating completed tasks count:', error);
-        });
-      })
-      .catch((error) => {
-        console.error('Error for completed tasks count:', error);
-      });
+  const removeTask = (setTasks, tasks, index, taskType) => {
+    const updatedTasks = tasks.filter((task, i) => i !== index);
+    setTasks(updatedTasks);
+    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    set(taskRef, updatedTasks);
   };
 
-  const editTask = (setTasks, tasks, index, newTask) => {
-    const newTasks = tasks.map((task, i) => (i === index ? newTask : task));
-    setTasks(newTasks);
+  const editTask = (setTasks, tasks, index, newTask, taskType) => {
+    const updatedTasks = tasks.map((task, i) => (i === index ? newTask : task));
+    setTasks(updatedTasks);
+    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    set(taskRef, updatedTasks);
   };
 
-  const completeTask = (setTasks, tasks, index, isDaily) => {
-    const newTasks = tasks.filter((task, i) => i !== index);
-    setTasks(newTasks);
+  const completeTask = (setTasks, tasks, index, isDaily, taskType) => {
+    const updatedTasks = tasks.filter((task, i) => i !== index);
+    setTasks(updatedTasks);
+    const taskRef = ref(db, `users/${userId}/${taskType}`);
+    set(taskRef, updatedTasks);
+
     if (isDaily) {
-      setCompletedDailyTasks(completedDailyTasks + 1);
+      const newCount = completedDailyTasks + 1;
+      setCompletedDailyTasks(newCount);
+      const countRef = ref(db, `users/${userId}/completedDailyTasks`);
+      set(countRef, newCount);
     } else {
-      setCompletedWeeklyTasks(completedWeeklyTasks + 1);
+      const newCount = completedWeeklyTasks + 1;
+      setCompletedWeeklyTasks(newCount);
+      const countRef = ref(db, `users/${userId}/completedWeeklyTasks`);
+      set(countRef, newCount);
     }
   };
 
@@ -72,9 +100,9 @@ function Dashboard({ userId }) {
                 <Task
                   key={index}
                   task={task}
-                  onRemove={() => removeTask(setTodayTasks, todayTasks, index)}
-                  onEdit={(newTask) => editTask(setTodayTasks, todayTasks, index, newTask)}
-                  onComplete={() => completeTask(setTodayTasks, todayTasks, index, true)}
+                  onRemove={() => removeTask(setTodayTasks, todayTasks, index, 'todayTasks')}
+                  onEdit={(newTask) => editTask(setTodayTasks, todayTasks, index, newTask, 'todayTasks')}
+                  onComplete={() => completeTask(setTodayTasks, todayTasks, index, true, 'todayTasks')}
                 />
               ))}
             </ul>
@@ -84,7 +112,7 @@ function Dashboard({ userId }) {
               onChange={(e) => setNewTodayTask(e.target.value)}
               placeholder="Add new task"
             />
-            <button className="add-task-button" onClick={() => addTask(setTodayTasks, todayTasks, newTodayTask, setNewTodayTask)}>Add Task</button>
+            <button className="add-task-button" onClick={() => addTask(setTodayTasks, todayTasks, newTodayTask, setNewTodayTask, 'todayTasks')}>Add Task</button>
           </article>
           <article className="checklist">
             <h2>Weekly Checklist</h2>
@@ -93,9 +121,9 @@ function Dashboard({ userId }) {
                 <Task
                   key={index}
                   task={task}
-                  onRemove={() => removeTask(setWeeklyTasks, weeklyTasks, index)}
-                  onEdit={(newTask) => editTask(setWeeklyTasks, weeklyTasks, index, newTask)}
-                  onComplete={() => completeTask(setWeeklyTasks, weeklyTasks, index, false)}
+                  onRemove={() => removeTask(setWeeklyTasks, weeklyTasks, index, 'weeklyTasks')}
+                  onEdit={(newTask) => editTask(setWeeklyTasks, weeklyTasks, index, newTask, 'weeklyTasks')}
+                  onComplete={() => completeTask(setWeeklyTasks, weeklyTasks, index, false, 'weeklyTasks')}
                 />
               ))}
             </ul>
@@ -105,7 +133,7 @@ function Dashboard({ userId }) {
               onChange={(e) => setNewWeeklyTask(e.target.value)}
               placeholder="Add new task"
             />
-            <button className="add-task-button" onClick={() => addTask(setWeeklyTasks, weeklyTasks, newWeeklyTask, setNewWeeklyTask)}>Add Task</button>
+            <button className="add-task-button" onClick={() => addTask(setWeeklyTasks, weeklyTasks, newWeeklyTask, setNewWeeklyTask, 'weeklyTasks')}>Add Task</button>
           </article>
           <div className="thirds">
             <article>

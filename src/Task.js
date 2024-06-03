@@ -31,25 +31,27 @@ function Task({ task, onRemove, onEdit, onComplete }) {
         />
       ) : (
         <>
-          {task}
-          <img
-            src="/images/edit_btn.png"
-            alt="Edit"
-            className="icon edit"
-            onClick={() => setIsEditing(true)}
-          />
-          <img
-            src="/images/remove_btn.png"
-            alt="Remove"
-            className="icon remove"
-            onClick={handleRemove}
-          />
-          <img
-            src="/images/complete_btn.png"
-            alt="Complete"
-            className="icon complete"
-            onClick={onComplete}
-          />
+          <span>{task}</span>
+          <div className="icon-container">
+            <img
+              src="/images/edit_btn.png"
+              alt="Edit"
+              className="icon edit"
+              onClick={() => setIsEditing(true)}
+            />
+            <img
+              src="/images/remove_btn.png"
+              alt="Remove"
+              className="icon remove"
+              onClick={handleRemove}
+            />
+            <img
+              src="/images/complete_btn.png"
+              alt="Complete"
+              className="icon complete"
+              onClick={onComplete}
+            />
+          </div>
         </>
       )}
     </li>
