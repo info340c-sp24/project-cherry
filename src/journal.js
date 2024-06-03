@@ -146,7 +146,7 @@ import { db } from './index';
 
 function JournalHeader() {
     return (
-        <header>
+        <header className="header">
             <div>
                 <h1>Cherry Habit Tracker</h1>
                 <h2 className="subheader">Journal</h2>
@@ -254,7 +254,8 @@ function JournalApp({ user }) {
                             <div key={index} className="entry" onClick={() => handleEntryClick(entry)}>
                                 <h3>{entry.title}</h3>
                                 <p className="date"><time dateTime={entry.datetime}>{entry.date}</time></p>
-                                <p className="first-line">{entry.fline}</p>
+                                <p className="first-line">{entry.fline.substring(0, 50) + "..."}</p> 
+                                <p className="first-line-long">{entry.fline.substring(0, 100) + "..."}</p> 
                             </div>
                         ))}
                     </section>
