@@ -14,7 +14,8 @@ function Dashboard({ user }) {
   const [newWeeklyTask, setNewWeeklyTask] = useState('');
   const [completedDailyTasks, setCompletedDailyTasks] = useState(0);
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
-
+  const [streakCount, setStreakCount] = useState(null);
+  
   useEffect(() => {
     if (!user || !user.uid) {
       console.error("User or user.uid is undefined");
@@ -167,7 +168,7 @@ function Dashboard({ user }) {
           <div className="thirds">
             <article>
               <h2>Summary</h2>
-              <SummaryCarousel completedDailyTasks={completedDailyTasks} completedWeeklyTasks={completedWeeklyTasks} />
+              <SummaryCarousel streakCount={streakCount} completedDailyTasks={completedDailyTasks} completedWeeklyTasks={completedWeeklyTasks} />
             </article>
             <article>
               <h2>Journal</h2>

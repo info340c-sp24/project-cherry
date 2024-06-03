@@ -113,7 +113,7 @@ export function SummaryApp({ user }) {
        <div className="summary-container">
          <div className="row">
            <SummaryCard user = {user}
-             title="CURRENT STREAK"
+             title="CURRENT JOURNALING STREAK"
              text={`${streakCount} Days`}
              imgSrc="images/flame.png"
              alt="Red, Orange, and Yellow Flame Emoticon"

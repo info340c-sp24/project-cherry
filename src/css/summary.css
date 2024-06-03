@@ -15,12 +15,6 @@ body.summary-page main {
   margin-bottom: 20px;
 }
 
-.profile-picture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
 .card-title{
   font-size: 15px;
 }

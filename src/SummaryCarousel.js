@@ -2,12 +2,12 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-function SummaryCarousel({ completedDailyTasks, completedWeeklyTasks }) {
+function SummaryCarousel({ completedDailyTasks, completedWeeklyTasks, streakCount }) {
   return (
     <div className="carousel-container">
       <Carousel>
         <Carousel.Item>
-          <h3>0 Day Streak</h3>
+          <h3>{streakCount} Current Journaling Streak</h3>
         </Carousel.Item>
         <Carousel.Item>
           <h3>{completedDailyTasks} Completed Daily Tasks</h3>

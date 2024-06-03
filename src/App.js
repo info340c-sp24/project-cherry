@@ -27,8 +27,8 @@ const App = () => {
   return (
     <Router>
       <div>
-        <AuthStatus />
-        <Navbar />
+        {/* Navbar not displayed unless user is logged in */}
+        {user && <Navbar />}
         <Routes>
           {user ? (
             <>
@@ -38,7 +38,6 @@ const App = () => {
             </>
           ) : (
             <>
-              <Route path="/login" element={<MySignInScreen />} />
               <Route path="*" element={<MySignInScreen />} />
             </>
           )}
