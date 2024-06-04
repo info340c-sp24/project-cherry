@@ -39,7 +39,7 @@ function JournalApp({ user }) {
                 const entriesArray = Object.keys(journalEntries).map(key => ({
                     ...journalEntries[key],
                     id: key,
-                    fline: journalEntries[key].content || '', // Ensure fline is always defined
+                    fline: journalEntries[key].content || '',
                 }));
                 setJournalData(entriesArray);
             })

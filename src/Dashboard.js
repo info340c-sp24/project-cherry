@@ -16,8 +16,7 @@ function Dashboard({ user }) {
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
   const [journalTitle, setJournalTitle] = useState('');
   const [journalContent, setJournalContent] = useState('');
-  const [journalDate, setJournalDate] = useState('');
-  const [streakCount, setStreakCount] = useState(null);
+  const [streakCount, setStreakCount] = useState(0);
 
   useEffect(() => {
     if (!user || !user.uid) {
@@ -56,8 +55,6 @@ function Dashboard({ user }) {
       setStreakCount(data ? data : 0);
     });
 
-    const today = new Date().toISOString().split('T')[0];
-    setJournalDate(today);
   }, [user]);
 
   const addTask = (setTasks, tasks, newTask, setNewTask, taskType) => {
@@ -134,7 +131,7 @@ function Dashboard({ user }) {
     const newJournalEntry = {
       title: journalTitle,
       content: journalContent,
-      date: journalDate
+      date: new Date().toLocaleDateString() // Automatically set the date to today's date
     };
 
     push(journalRef, newJournalEntry)
@@ -218,16 +215,6 @@ function Dashboard({ user }) {
                   value={journalTitle}
                   onChange={(e) => setJournalTitle(e.target.value)}
                   placeholder="Journal Title"
-                  required
-                />
-                <br />
-                <label htmlFor="date">Date: </label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  value={journalDate}
-                  onChange={(e) => setJournalDate(e.target.value)}
                   required
                 />
                 <br />
