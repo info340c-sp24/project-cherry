@@ -106,7 +106,7 @@ body.summary-page main {
 
 .save-goal-button {
   background-color: #e584cd !important; 
-  color: white !important; 
+  color: rgb(0, 0, 0) !important; 
   border: none !important;
   padding: 10px 20px !important;
   margin-top: 10px !important;
