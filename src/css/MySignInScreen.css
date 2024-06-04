@@ -1,13 +1,14 @@
 
-  .sign-in-container h1 {
-    font-size: 2em !important;
-    margin-top: 200px !important;
-    margin-bottom: 20px !important;
-    text-align: center !important;
-  }
-  
-  .sign-in-container p {
-    font-size: 1.2em !important;
-    margin-bottom: 50px !important;
-    text-align: center !important;
-  }
+.sign-in-container h1 {
+  font-size: 2em !important;
+  margin-top: 200px !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+.sign-in-container p {
+  font-size: 1.2em !important;
+  margin-bottom: 50px !important;
+  text-align: center !important;
+  padding-bottom: 0;
+}
