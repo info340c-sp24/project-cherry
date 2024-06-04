@@ -236,7 +236,7 @@ function Dashboard({ user }) {
                   placeholder="Type here..."
                   required
                 ></textarea>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"/>
               </form>
             </article>
           </div>

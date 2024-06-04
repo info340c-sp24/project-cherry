@@ -1,304 +1,304 @@
 @media only screen and (max-width: 768px) {
-    header, main {
-      width: 100% !important;  
-      border-radius: 20px !important; 
-      padding: 10px 5% !important;  
-      font-weight: bold !important;
-    }
-  
-    cherryHeader h1 {
-      margin-top: 100px !important; 
-      padding: 2% 3% !important; 
-    }
+  header, main {
+    width: 100% !important;  
+    border-radius: 20px !important; 
+    padding: 10px 5% !important;  
+    font-weight: bold !important;
+  }
 
-    h2 {
-      font-weight: bold !important;
-    }
-    
-    body {
-      font-size: 14px !important; 
-    }
-  
-    nav {
-      padding: 0.5em 0 !important;  
-      font-size: 0.9em !important;  
-    }
-  
-    nav ul {
-      flex-direction: column !important; 
-    }
-  
-    nav li {
-      margin: 10px 5px !important;
-    }
-  
-    article, .checklist, .thirds {
-      width: 100% !important;
-      margin: 5px 0 !important; 
-      padding: 8px !important; 
-    }
-  
-    .thirds {
-      flex-direction: column !important; 
-    }
-  
-    .thirds > article {
-      height: auto !important; 
-    }
-  
-    .thirds > article > img, .icon {
-      width: 15px !important;
-      height: 15px !important;
-    }
-  
-    .add {
-      width: 15px !important;
-      height: 15px !important;
-      right: 5px !important; 
-      bottom: 5px !important;
-    }
-  
-    textarea {
-      height: 120px !important; 
-    }
-  
-    footer {
-      padding: 1rem 0 !important;  
-      font-size: 0.8em !important; 
-    }
-  
-    .placeholder {
-      display: none !important;
-      visibility: hidden !important;
-    }
+  cherryHeader h1 {
+    margin-top: 100px !important; 
+    padding: 2% 3% !important; 
   }
-  
-  body {
-    background-color: #e584cd !important;
-    font-family: "Georgia", "Times New Roman", "Times", "serif" !important;
-  }
-  
-  header {
-    margin: 60px auto !important;
-    background-color: #e6acde !important;
-    text-align: center !important;
-    margin-top: 100px !important;
-  }
-  
-  h1 {
-    margin-top: 20px !important;
-    padding: 1% !important;
+
+  h2 {
     font-weight: bold !important;
   }
   
-  main {
-    background-color: white !important;
-    padding: 3vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: -20px !important;
+  body {
+    font-size: 14px !important; 
   }
 
-  header, main {
-    border-radius: 50px !important;
-    width: 80% !important;
-    box-sizing: border-box !important;
-  }
-  
-
-  /*
-   * Nav styles
-   */
   nav {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    background-color: #e6acde !important;
-    color: white !important;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15) !important;
-    z-index: 1000 !important;
-    padding: 0.8em 0 !important;
-    box-sizing: border-box !important;
-  }
-  
-  nav ul {
-    margin: 0 auto !important;
-    padding: 0 10px !important;
-    display: flex !important;
-    justify-content: center !important;
-    list-style-type: none !important;
-  }
-  
-  nav li {
-    margin: 0 20px !important;
-    font-size: 1.2em !important;
-  }
-  
-  nav a {
-    color: white !important;
-    text-decoration: none !important;
-    transition: color 0.6s !important;
-  }
-  
-  nav a:hover, nav a:focus {
-    color: #421a39 !important;
-    text-decoration: none !important;
-  }
-  
-  /*
-   * Footer styles
-   */
-  footer {
-    width: 100% !important;
-    background-color: #f3e0f7 !important;
-    color: #333 !important;
-    text-align: center !important;
-    padding: 3rem 0 10rem 0 !important;
-    border-radius: 0 !important;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
-    font-size: 0.95em !important;
-    margin-top: 2rem !important;
-  }
-  
-  footer ul {
-    list-style-type: none !important;
-    padding: 0 !important;
-    margin: 10px 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  
-  footer li {
-    margin: 0 10px !important;
-  }
-  
-  footer a {
-    color: #864e95 !important;
-    text-decoration: none !important;
-  }
-  
-  footer a:hover, footer a:focus {
-    text-decoration: underline !important;
-    color: #bf77b6 !important;
-  }
-  
-  /*
-   * Dashboard styles
-   */
-  article {
-    border: 1px solid #ccc !important;
-    margin: 10px !important;
-    padding: 10px !important;
-    box-sizing: border-box !important;
-    font-weight: bold;
-  }
-  
-  .checklist {
-    width: 33.333% !important;
-    height: 100% !important;
-  }
-  
-  .thirds {
-    width: 33.333% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-  }
-  
-  .thirds > article > img {
-    height: 80px !important;
-  }
-  
-  .thirds > article {
-    height: 50% !important;
-  }
-  
-  textarea {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-  /*
-   * Icon styles
-   */
-  .icon {
-    width: 20px !important;
-    height: 20px !important;
-    cursor: pointer !important;
-    padding-left: 5px !important;
-  }
-  
-  .edit, .remove {
-    margin-left: 10px !important;
-  }
-  
-  .add {
-    display: block !important;
-    width: 20px !important;
-    height: 20px !important;
-    border: none !important;
-    background: transparent !important;
-    position: absolute !important;
-    right: 10px !important;
-    bottom: 10px !important;
-    cursor: pointer !important;
-  }
-  
-  article {
-    position: relative !important;
-    padding: 15px !important;
-    overflow: hidden !important;
-  }
-  
-  ul {
-    list-style-type: none !important;
-    padding: 0 !important;
-  }
-  
-  li {
-    margin-bottom: 5px !important;
-  }
-  
-  .content {
-    display: flex !important;
-    flex-direction: row !important;
-  }
-  
-  li.editing input {
-    border: 2px solid #e584cd !important;
-    outline: none !important;
-  }
-  
-  li.editing input:focus {
-    border-color: #bf77b6 !important;
-  }
-  
-  .add-task-button {
-    background-color: #e584cd !important; 
-    color: rgb(0, 0, 0) !important; 
-    border: none !important;
-    padding: 10px 20px !important;
-    margin-top: 10px !important;
-    cursor: pointer !important;
-    font-size: 16px !important;
-    border-radius: 5px !important;
-    transition: background-color 0.3s ease !important;
-  }
-  
-  .add-task-button:hover {
-    background-color: #bf77b6 !important; 
+    padding: 0.5em 0 !important;  
+    font-size: 0.9em !important;  
   }
 
-  form input[type="submit"] {
-    background-color: #e584cd !important; 
-    color: rgb(0, 0, 0) !important; 
-    border: none !important;
-    padding: 10px 20px !important;
-    margin-top: 10px !important;
-    cursor: pointer !important;
-    font-size: 16px !important;
-    border-radius: 5px !important;
-    transition: background-color 0.3s ease !important;
-    font-weight: lighter !important;
+  nav ul {
+    flex-direction: column !important; 
   }
+
+  nav li {
+    margin: 10px 5px !important;
+  }
+
+  article, .checklist, .thirds {
+    width: 100% !important;
+    margin: 5px 0 !important; 
+    padding: 8px !important; 
+  }
+
+  .thirds {
+    flex-direction: column !important; 
+  }
+
+  .thirds > article {
+    height: auto !important; 
+  }
+
+  .thirds > article > img, .icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .add {
+    width: 15px !important;
+    height: 15px !important;
+    right: 5px !important; 
+    bottom: 5px !important;
+  }
+
+  textarea {
+    height: 120px !important; 
+  }
+
+  footer {
+    padding: 1rem 0 !important;  
+    font-size: 0.8em !important; 
+  }
+
+  .placeholder {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+body {
+  background-color: #e584cd !important;
+  font-family: "Georgia", "Times New Roman", "Times", "serif" !important;
+}
+
+header {
+  margin: 60px auto !important;
+  background-color: #e6acde !important;
+  text-align: center !important;
+  margin-top: 100px !important;
+}
+
+h1 {
+  margin-top: 20px !important;
+  padding: 1% !important;
+  font-weight: bold !important;
+}
+
+main {
+  background-color: white !important;
+  padding: 3vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: -20px !important;
+}
+
+header, main {
+  border-radius: 50px !important;
+  width: 80% !important;
+  box-sizing: border-box !important;
+}
+
+
+/*
+ * Nav styles
+ */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #e6acde !important;
+  color: white !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15) !important;
+  z-index: 1000 !important;
+  padding: 0.8em 0 !important;
+  box-sizing: border-box !important;
+}
+
+nav ul {
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+  list-style-type: none !important;
+}
+
+nav li {
+  margin: 0 20px !important;
+  font-size: 1.2em !important;
+}
+
+nav a {
+  color: white !important;
+  text-decoration: none !important;
+  transition: color 0.6s !important;
+}
+
+nav a:hover, nav a:focus {
+  color: #421a39 !important;
+  text-decoration: none !important;
+}
+
+/*
+ * Footer styles
+ */
+footer {
+  width: 100% !important;
+  background-color: #f3e0f7 !important;
+  color: #333 !important;
+  text-align: center !important;
+  padding: 3rem 0 10rem 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
+  font-size: 0.95em !important;
+  margin-top: 2rem !important;
+}
+
+footer ul {
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+footer li {
+  margin: 0 10px !important;
+}
+
+footer a {
+  color: #864e95 !important;
+  text-decoration: none !important;
+}
+
+footer a:hover, footer a:focus {
+  text-decoration: underline !important;
+  color: #bf77b6 !important;
+}
+
+/*
+ * Dashboard styles
+ */
+article {
+  border: 1px solid #ccc !important;
+  margin: 10px !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+  font-weight: bold;
+}
+
+.checklist {
+  width: 33.333% !important;
+  height: 100% !important;
+}
+
+.thirds {
+  width: 33.333% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.thirds > article > img {
+  height: 80px !important;
+}
+
+.thirds > article {
+  height: 50% !important;
+}
+
+textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/*
+ * Icon styles
+ */
+.icon {
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer !important;
+  padding-left: 5px !important;
+}
+
+.edit, .remove {
+  margin-left: 10px !important;
+}
+
+.add {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  border: none !important;
+  background: transparent !important;
+  position: absolute !important;
+  right: 10px !important;
+  bottom: 10px !important;
+  cursor: pointer !important;
+}
+
+article {
+  position: relative !important;
+  padding: 15px !important;
+  overflow: hidden !important;
+}
+
+ul {
+  list-style-type: none !important;
+  padding: 0 !important;
+}
+
+li {
+  margin-bottom: 5px !important;
+}
+
+.content {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+li.editing input {
+  border: 2px solid #e584cd !important;
+  outline: none !important;
+}
+
+li.editing input:focus {
+  border-color: #bf77b6 !important;
+}
+
+.add-task-button {
+  background-color: #e584cd !important; 
+  color: rgb(0, 0, 0) !important; 
+  border: none !important;
+  padding: 10px 20px !important;
+  margin-top: 10px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.add-task-button:hover {
+  background-color: #bf77b6 !important; 
+}
+
+form input[type="submit"] {
+  background-color: #e584cd !important; 
+  color: rgb(0, 0, 0) !important; 
+  border: none !important;
+  padding: 10px 20px !important;
+  margin-top: 10px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease !important;
+  font-weight: lighter !important;
+}

@@ -107,7 +107,7 @@ p {
   margin-top: .5rem !important;
 }
 
-button {
+.save {
   background-color: #e584cd !important; 
   color: black !important; 
   border: none !important;
@@ -119,6 +119,7 @@ button {
   transition: background-color 0.3s ease !important;
   font-weight: lighter !important;
 }
+
 
 @media (min-width: 768px) {
   .entries {
