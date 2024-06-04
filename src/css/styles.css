@@ -108,7 +108,7 @@ nav {
   left: 0 !important;
   width: 100% !important;
   background-color: #e6acde !important;
-  color: white !important;
+  color: black !important;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15) !important;
   z-index: 1000 !important;
   padding: 0.8em 0 !important;
@@ -129,7 +129,7 @@ nav li {
 }
 
 nav a {
-  color: white !important;
+  color: black !important;
   text-decoration: none !important;
   transition: color 0.6s !important;
 }
