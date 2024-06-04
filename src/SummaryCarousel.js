@@ -1,8 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SummaryCarousel({ completedDailyTasks, completedWeeklyTasks, streakCount }) {
+  console.log(streakCount);
   return (
     <div className="carousel-container">
       <Carousel>

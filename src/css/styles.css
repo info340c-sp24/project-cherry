@@ -1,372 +1,313 @@
 /*Dashboard media queries*/
 @media only screen and (max-width: 768px) {
   header, main {
-    width: 100%;
-    border-radius: 20px;
-    padding: 10px 5%;
+    width: 100% !important;
+    border-radius: 20px !important;
+    padding: 10px 5% !important;
   }
 
   h1 {
-    margin-top: 10px;
-    padding: 2% 3%;
+    margin-top: 10px !important;
+    padding: 2% 3% !important;
   }
 
   body {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   nav {
-    padding: 0.5em 0;
-    font-size: 0.9em;
+    padding: 0.5em 0 !important;
+    font-size: 0.9em !important;
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   nav li {
-    margin: 10px 5px;
+    margin: 10px 5px !important;
   }
 
   article, .checklist, .thirds {
-    width: 100%;
-    margin: 5px 0;
-    padding: 8px;
+    width: 100% !important;
+    margin: 5px 0 !important;
+    padding: 8px !important;
   }
 
   .thirds {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .thirds > article {
-    height: auto;
+    height: auto !important;
   }
 
   .thirds > article > img, .icon {
-    width: 15px;
-    height: 15px;
+    width: 15px !important;
+    height: 15px !important;
   }
 
   .add {
-    width: 15px;
-    height: 15px;
-    right: 5px;
-    bottom: 5px;
+    width: 15px !important;
+    height: 15px !important;
+    right: 5px !important;
+    bottom: 5px !important;
   }
 
   textarea {
-    height: 120px;
+    height: 120px !important;
   }
 
   footer {
-    padding: 1rem 0;
-    font-size: 0.8em;
+    padding: 1rem 0 !important;
+    font-size: 0.8em !important;
   }
 
 
   .placeholder {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
   }
 }
 
 body {
-  background-color: #e584cd;
-  font-family:"Georgia", "Times New Roman", "Times", "serif";
+  background-color: #e584cd !important;
+  font-family:"Georgia", "Times New Roman", "Times", "serif" !important;
 }
 
 header {
-  margin: 60px auto;
-  background-color: #e6acde;
-  text-align: center;
+  margin: 60px auto !important;
+  background-color: #e6acde !important;
+  text-align: center !important;
 }
 
 h1 {
-  margin-top: 20px;
-  padding: 1%;
+  margin-top: 20px !important;
+  padding: 1% !important;
 }
 
 main {
-  background-color: white;
-  padding: 3vw;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: white !important;
+  padding: 3vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 header, main {
-  border-radius: 50px;
-  width: 80%;
-  box-sizing: border-box;
+  border-radius: 50px !important;
+  width: 80% !important;
+  box-sizing: border-box !important;
 }
 
 /*
 * Nav styles
 */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #e6acde;
-  color: white;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
-  z-index: 1000;
-  padding: 0.8em 0;
-  box-sizing: border-box;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #e6acde !important;
+  color: white !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15) !important;
+  z-index: 1000 !important;
+  padding: 0.8em 0 !important;
+  box-sizing: border-box !important;
   }
 
   nav ul {
-  margin: 0 auto;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    list-style-type: none !important;
   }
-
+  
   nav li {
-  margin: 0 20px;
-  font-size: 1.2em;
+    margin: 0 20px !important;
+    font-size: 1.2em !important;
   }
-
+  
   nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.6s;
+    color: white !important;
+    text-decoration: none !important;
+    transition: color 0.6s !important;
   }
-
+  
   nav a:hover, nav a:focus {
-  color: #421a39;
-  text-decoration: none;
+    color: #421a39 !important;
+    text-decoration: none !important;
   }
-
-  /*
-* Footer styles
-*/
-footer {
-  width: 100%;
-  background-color: #f3e0f7;
-  color: #333;
-  text-align: center;
-  padding: 3rem 0 10rem 0;
-  border-radius: 0;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  font-size: 0.95em;
-  margin-top: 2rem;
+  
+  /* Footer styles */
+  footer {
+    width: 100% !important;
+    background-color: #f3e0f7 !important;
+    color: #333 !important;
+    text-align: center !important;
+    padding: 3rem 0 10rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
+    font-size: 0.95em !important;
+    margin-top: 2rem !important;
   }
-
+  
   footer ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
   }
-
+  
   footer li {
-  margin: 0 10px;
+    margin: 0 10px !important;
   }
-
+  
   footer a {
-  color: #864e95;
-  text-decoration: none;
+    color: #864e95 !important;
+    text-decoration: none !important;
   }
-
+  
   footer a:hover, footer a:focus {
-  text-decoration: underline;
-  color: #bf77b6;
+    text-decoration: underline !important;
+    color: #bf77b6 !important;
   }
-
-/*
-* Dashboard styles
-*/
-article {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.checklist {
-width: 33.333%;
-height: 100%;
-}
-
-.thirds {
-  width: 33.333%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.thirds > article > img {
-  height: 80px;
-}
-
-.thirds > article {
-  height: 50%;
-}
-
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Icon styles */
-.icon {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  padding-left: 5px;
-  border-radius: 50%; /* Make icons circular */
-}
-
-.edit, .remove, .complete {
-  margin-left: 15px;
-  margin-right: 5px; /* Add space to the right */
-}
-
-li {
-  display: flex;
-  align-items: center; /* Align items in the center */
-  justify-content: space-between; /* Distribute space evenly */
-}
-
-li > span {
-  flex-grow: 1; /* Allow the text to take up available space */
-}
-
-/* Ensure buttons are more towards the right side */
-li > .icon-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Add this to position the icons correctly */
-li > .icon-container img {
-  margin-left: 10px;
-}
-
-li.editing input {
-  flex-grow: 1; /* Allow input to take up available space */
-}
-
-
-/* journal css */
-.content {
-  display: flex;
-  flex-direction: row;
-}
-
-.entries {
-  flex: 1;
-  padding-right:.5rem;
-  border-right: solid 2px #e6acde;
-}
-
-.entry {
-  display: contents;
-}
-
-.page {
-  padding-left: 1rem;
-  flex: content;
-}
-
-h2 {
-  text-align: center;
-  margin-top: 0;
-}
-
-.subheader {
-  padding-bottom: 1%;
-}
-
-.current-title {
-  text-align: left;
-  margin-bottom: 0;
-}
-
-h3 {
-  font-size:medium;
-  margin:0;
-  padding-top: .25rem;
-}
-
-p {
-  font-size:small;
-  margin: 0;
-}
-
-.date {
-  padding-bottom: 3px;
-  font-style:italic;
-}
-
-.first-line {
-  padding-bottom: .25rem;
-  border-bottom: dashed 1px black;
-}
-
-textarea {
-  width: 100%;
-  height: 100%;
-  background-color: #f2d9ef;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  margin-top: .5rem;
-}
-
-/* Quiz Styling */
-
-
-
-  table{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  
+  /* Dashboard styles */
+  article {
+    border: 1px solid #ccc !important;
+    margin: 10px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
   }
-
-  .form-example{
-    padding: 1rem;
+  
+  .checklist {
+    width: 33.333% !important;
+    height: 100% !important;
   }
-
-  .orientation{
-    text-align: center;
+  
+  .thirds {
+    width: 33.333% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
   }
-
-  .treatmentinput{
-    text-align: center;
-    padding-top: 1rem;
+  
+  .thirds > article > img {
+    height: 80px !important;
   }
-
-  .quizmessage{
-    font-size: medium;
-    padding: 1rem;
+  
+  .thirds > article {
+    height: 50% !important;
   }
-
-  .mybutton {
-    display: inline-block;
-    padding: 10px 10px;
-    font-size: 12px;
-    border: 2px solid #f2d9ef;
-    background-color: #f2d9ef;
-    color: black;
-    text-align: center;
-
+  
+  textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-
-  .mybutton:hover {
-    background-color:#e6acde;
-    border: 2px solid #e6acde;
-    color:#421a39;
+  
+  /* Icon styles */
+  .icon {
+    width: 25px !important;
+    height: 25px !important;
+    cursor: pointer !important;
+    padding-left: 5px !important;
+    border-radius: 50% !important; /* Make icons circular */
   }
-
-  .grid{
-    text-align: center;
+  
+  .edit, .remove, .complete {
+    margin-left: 15px !important;
+    margin-right: 5px !important; /* Add space to the right */
   }
-
-  th{
-    padding: 2em 2em 1em 1em;
-    text-align: center;
+  
+  li {
+    display: flex !important;
+    align-items: center !important; /* Align items in the center */
+    justify-content: space-between !important; /* Distribute space evenly */
+  }
+  
+  li > span {
+    flex-grow: 1 !important; /* Allow the text to take up available space */
+  }
+  
+  /* Ensure buttons are more towards the right side */
+  li > .icon-container {
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Add this to position the icons correctly */
+  li > .icon-container img {
+    margin-left: 10px !important;
+  }
+  
+  li.editing input {
+    flex-grow: 1 !important; /* Allow input to take up available space */
+  }
+  
+  /* journal css */
+  .content {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  .entries {
+    flex: 1 !important;
+    padding-right: .5rem !important;
+    border-right: solid 2px #e6acde !important;
+  }
+  
+  .entry {
+    display: contents !important;
+  }
+  
+  .page {
+    padding-left: 1rem !important;
+    flex: content !important;
+  }
+  
+  h2 {
+    text-align: center !important;
+    margin-top: 0 !important;
+  }
+  
+  .subheader {
+    padding-bottom: 1% !important;
+  }
+  
+  .current-title {
+    text-align: left !important;
+    margin-bottom: 0 !important;
+  }
+  
+  h3 {
+    font-size: medium !important;
+    margin: 0 !important;
+    padding-top: .25rem !important;
+  }
+  
+  p {
+    font-size: small !important;
+    margin: 0 !important;
+  }
+  
+  .date {
+    padding-bottom: 3px !important;
+    font-style: italic !important;
+  }
+  
+  .first-line {
+    padding-bottom: .25rem !important;
+    border-bottom: dashed 1px black !important;
+  }
+  
+  textarea {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #f2d9ef !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 5px !important;
+    margin-top: .5rem !important;
   }
