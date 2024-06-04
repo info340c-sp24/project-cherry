@@ -8,13 +8,13 @@ function SummaryCarousel({ completedDailyTasks, completedWeeklyTasks, streakCoun
     <div className="carousel-container">
       <Carousel>
         <Carousel.Item>
-          <h3>{streakCount} Current Journaling Streak</h3>
+          <h1>{streakCount} Days Journaling Streak</h1>
         </Carousel.Item>
         <Carousel.Item>
-          <h3>{completedDailyTasks} Completed Daily Tasks</h3>
+          <h1>{completedDailyTasks} Completed Daily Tasks</h1>
         </Carousel.Item>
         <Carousel.Item>
-          <h3>{completedWeeklyTasks} Completed Weekly Tasks</h3>
+          <h1>{completedWeeklyTasks} Completed Weekly Tasks</h1>
         </Carousel.Item>
       </Carousel>
     </div>

@@ -125,7 +125,7 @@ button {
   }
 
   .first-line-long {
-    display: contents !important;
+    display: block !important;
     border-bottom: dashed 1px black !important;
   }
 }
