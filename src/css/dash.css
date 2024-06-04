@@ -289,3 +289,16 @@
   .add-task-button:hover {
     background-color: #bf77b6 !important; 
   }
+
+  form input[type="submit"] {
+    background-color: #e584cd !important; 
+    color: white !important; 
+    border: none !important;
+    padding: 10px 20px !important;
+    margin-top: 10px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
+    font-weight: lighter !important;
+  }

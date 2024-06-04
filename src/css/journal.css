@@ -108,7 +108,16 @@ p {
 }
 
 button {
-  margin: 5px !important;
+  background-color: #e584cd !important; 
+  color: white !important; 
+  border: none !important;
+  padding: 10px 20px !important;
+  margin-top: 10px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease !important;
+  font-weight: lighter !important;
 }
 
 @media (min-width: 768px) {
@@ -116,7 +125,7 @@ button {
     flex: 1 !important;
     padding-right: .5rem !important;
     border-right: solid 2px #e6acde !important;
-    height: calc(100vh - 200px) !important; /* Set a specific height for the entries section */
+    height: calc(100vh - 200px) !important; 
     overflow-y: auto !important;
   }
 

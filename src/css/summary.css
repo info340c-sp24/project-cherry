@@ -105,14 +105,16 @@ body.summary-page main {
 }
 
 .save-goal-button {
-  padding: 5px 10px !important;
-  cursor: pointer !important;
-  background-color: #e584cd !important;
-  color: white !important;
+  background-color: #e584cd !important; 
+  color: white !important; 
   border: none !important;
-  border-radius: 2px !important;
+  padding: 10px 20px !important;
   margin-top: 10px !important;
-  margin-left: -0px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease !important;
+  font-weight: lighter !important;
 }
 
 .carousel-container {
