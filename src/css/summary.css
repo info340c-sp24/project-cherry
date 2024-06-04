@@ -15,12 +15,6 @@ body.summary-page main {
   margin-bottom: 20px;
 }
 
-.profile-picture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
 .card-title{
   font-size: 15px;
 }
@@ -104,6 +98,23 @@ body.summary-page main {
   margin: 4px 20px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.goal-input {
+  padding: 5px;
+  margin: 10px 0;
+  width: calc(100% - 20px); 
+}
+
+.save-goal-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #e584cd;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-left: -0px;
 }
 
 @media (min-width: 768px) {

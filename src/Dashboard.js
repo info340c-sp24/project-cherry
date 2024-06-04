@@ -17,6 +17,7 @@ function Dashboard({ user }) {
   const [journalTitle, setJournalTitle] = useState('');
   const [journalContent, setJournalContent] = useState('');
   const [journalDate, setJournalDate] = useState('');
+  const [streakCount, setStreakCount] = useState(null);
 
   useEffect(() => {
     if (!user || !user.uid) {
@@ -28,6 +29,7 @@ function Dashboard({ user }) {
     const weeklyTasksRef = ref(db, `users/${user.uid}/weeklyTasks`);
     const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
     const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
+    const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
 
     onValue(todayTasksRef, (snapshot) => {
       const data = snapshot.val();
@@ -47,6 +49,11 @@ function Dashboard({ user }) {
     onValue(completedWeeklyTasksRef, (snapshot) => {
       const data = snapshot.val();
       setCompletedWeeklyTasks(data ? data : 0);
+    });
+
+    onValue(streakCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setStreakCount(data ? data : 0);
     });
 
     const today = new Date().toISOString().split('T')[0];
@@ -170,6 +177,7 @@ function Dashboard({ user }) {
               value={newTodayTask}
               onChange={(e) => setNewTodayTask(e.target.value)}
               placeholder="Add new task"
+              aria-label="Add new task for today"
             />
             <button className="add-task-button" onClick={() => addTask(setTodayTasks, todayTasks, newTodayTask, setNewTodayTask, 'todayTasks')}>Add Task</button>
           </article>
@@ -197,7 +205,7 @@ function Dashboard({ user }) {
           <div className="thirds">
             <article>
               <h2>Summary</h2>
-              <SummaryCarousel completedDailyTasks={completedDailyTasks} completedWeeklyTasks={completedWeeklyTasks} />
+              <SummaryCarousel streakCount={streakCount} completedDailyTasks={completedDailyTasks} completedWeeklyTasks={completedWeeklyTasks} />
             </article>
             <article>
               <h2>Journal</h2>
