@@ -155,6 +155,21 @@ function JournalHeader() {
     );
 }
 
+function RenderEntries({filteredEntries} , handleEntryClick) {
+
+
+    let displayEntries = filteredEntries.map((entry, index) => (
+        <div key={index} className="entry" onClick={() => handleEntryClick(entry)}>
+            <h3>{entry.title}</h3>
+            <p className="date"><time dateTime={entry.datetime}>{entry.date}</time></p>
+            <p className="first-line">{entry.content?.substring(0, 50)}</p>
+            <p className="first-line-long">{entry.content?.substring(0, 100)}</p>
+        </div>
+    ))
+
+    return displayEntries;
+}
+
 function JournalApp({ user }) {
     const [displayContent, setDisplayContent] = useState('CurrentWrite');
     const [entryData, setEntryData] = useState({ title: '', content: '' });
@@ -194,8 +209,8 @@ function JournalApp({ user }) {
         const newEntry = {
             title: entryData.title,
             content: entryData.content,
-            datetime: dateTime,
-            date: dateReal
+            datetime: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}).split('/').join('-'),
+            date: new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).split('/').join('-')
         };
         const journalRef = ref(db, `users/${user.uid}/journal`);
         push(journalRef, newEntry)
@@ -250,14 +265,15 @@ function JournalApp({ user }) {
                                 </label>
                             </div>
                         </div>
-                        {filteredEntries.map((entry, index) => (
+                        {/* {filteredEntries.map((entry, index) => (
                             <div key={index} className="entry" onClick={() => handleEntryClick(entry)}>
                                 <h3>{entry.title}</h3>
                                 <p className="date"><time dateTime={entry.datetime}>{entry.date}</time></p>
-                                <p className="first-line">{entry.content?.substring(0, 50) + "..."}</p>
-                                <p className="first-line-long">{entry.content?.substring(0, 100) + "..."}</p>
+                                <p className="first-line">{entry.content?.substring(0, 50)}</p>
+                                <p className="first-line-long">{entry.content?.substring(0, 100)}</p>
                             </div>
-                        ))}
+                        ))} */}
+                        <RenderEntries filteredEntries={filteredEntries} handleEntryClick={handleEntryClick} />
                     </section>
                     <section className="page">
                         {displayContent === 'OldWrite' && (
@@ -287,7 +303,7 @@ function JournalApp({ user }) {
                                     value={entryData.title}
                                     onChange={(e) => setEntryData({ ...entryData, title: e.target.value })}
                                 />
-                                <p className="date"><time dateTime={dateTime}>{dateReal}</time></p>
+                                <p className="date"><time dateTime={dateTime}>{new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).split('/').join('-')}</time></p>
                                 <textarea
                                     className="current-entry"
                                     rows="25"
