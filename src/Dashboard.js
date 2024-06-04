@@ -4,7 +4,7 @@ import Task from './Task';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
 import { db } from './index';
-import { ref, get, set, onValue } from 'firebase/database';
+import { ref, onValue, set, push } from 'firebase/database';
 import SummaryCarousel from './SummaryCarousel';
 
 function Dashboard({ user }) {
@@ -14,8 +14,11 @@ function Dashboard({ user }) {
   const [newWeeklyTask, setNewWeeklyTask] = useState('');
   const [completedDailyTasks, setCompletedDailyTasks] = useState(0);
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
+  const [journalTitle, setJournalTitle] = useState('');
+  const [journalContent, setJournalContent] = useState('');
+  const [journalDate, setJournalDate] = useState('');
   const [streakCount, setStreakCount] = useState(null);
-  
+
   useEffect(() => {
     if (!user || !user.uid) {
       console.error("User or user.uid is undefined");
@@ -26,6 +29,7 @@ function Dashboard({ user }) {
     const weeklyTasksRef = ref(db, `users/${user.uid}/weeklyTasks`);
     const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
     const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
+    const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
 
     onValue(todayTasksRef, (snapshot) => {
       const data = snapshot.val();
@@ -46,6 +50,14 @@ function Dashboard({ user }) {
       const data = snapshot.val();
       setCompletedWeeklyTasks(data ? data : 0);
     });
+
+    onValue(streakCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setStreakCount(data ? data : 0);
+    });
+
+    const today = new Date().toISOString().split('T')[0];
+    setJournalDate(today);
   }, [user]);
 
   const addTask = (setTasks, tasks, newTask, setNewTask, taskType) => {
@@ -111,6 +123,30 @@ function Dashboard({ user }) {
     }
   };
 
+  const handleJournalSubmit = (e) => {
+    e.preventDefault();
+    if (!user || !user.uid) {
+      console.error("User or user.uid is undefined");
+      return;
+    }
+
+    const journalRef = ref(db, `users/${user.uid}/journal`);
+    const newJournalEntry = {
+      title: journalTitle,
+      content: journalContent,
+      date: journalDate
+    };
+
+    push(journalRef, newJournalEntry)
+      .then(() => {
+        setJournalTitle('');
+        setJournalContent('');
+      })
+      .catch((error) => {
+        console.error('Error saving journal entry:', error);
+      });
+  };
+
   if (!user || !user.uid) {
     return <div>Loading...</div>; // Show a loading message or spinner
   }
@@ -173,10 +209,37 @@ function Dashboard({ user }) {
             </article>
             <article>
               <h2>Journal</h2>
-              <form>
+              <form onSubmit={handleJournalSubmit}>
+                <label htmlFor="title">Title: </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={journalTitle}
+                  onChange={(e) => setJournalTitle(e.target.value)}
+                  placeholder="Journal Title"
+                  required
+                />
+                <br />
                 <label htmlFor="date">Date: </label>
-                <input type="date" id="date" name="trip-start" defaultValue="2024-05-19" min="2018-01-01" max="2026-12-31" />
-                <textarea name="user-input" rows="4" cols="20" placeholder="Type here..."></textarea>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={journalDate}
+                  onChange={(e) => setJournalDate(e.target.value)}
+                  required
+                />
+                <br />
+                <textarea
+                  name="content"
+                  rows="4"
+                  cols="20"
+                  value={journalContent}
+                  onChange={(e) => setJournalContent(e.target.value)}
+                  placeholder="Type here..."
+                  required
+                ></textarea>
                 <input type="submit" value="Submit" />
               </form>
             </article>

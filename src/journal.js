@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './css/journal.css';
 import { Navbar } from './navbar';
@@ -31,19 +30,23 @@ function JournalApp({ user }) {
 
         onValue(streakCountRef, (snapshot) => {
             const data = snapshot.val();
-            setStreakCount(data ? data : []);
-          });
+            setStreakCount(data ? data : 0);
+        });
 
         get(journalRef)
             .then((snapshot) => {
                 const journalEntries = snapshot.val() || [];
-                setJournalData(Object.values(journalEntries));
+                const entriesArray = Object.keys(journalEntries).map(key => ({
+                    ...journalEntries[key],
+                    id: key,
+                    fline: journalEntries[key].content || '', // Ensure fline is always defined
+                }));
+                setJournalData(entriesArray);
             })
             .catch((error) => {
                 console.error('Error fetching journal data:', error);
             });
     }, [user.uid]);
-
 
     const handlePageChange = (page) => {
         setDisplayContent(page);
@@ -73,7 +76,7 @@ function JournalApp({ user }) {
                     // First journal entry
                     setStreakCount(1);
                     set(streakCountRef, 1);
-                }else{
+                } else {
                     const lastDate = new Date(lastEntry.datetime).toLocaleDateString();
                     const currentDate = new Date().toLocaleDateString();
 
@@ -89,7 +92,7 @@ function JournalApp({ user }) {
                         setStreakCount(1);
                         set(streakCountRef, 1);
                     }
-                } 
+                }
             })
             .catch((error) => {
                 console.error('Error saving journal entry:', error);
@@ -100,8 +103,8 @@ function JournalApp({ user }) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    let dateTime = year + "-" + month + "-" + day;
-    let dateReal = month + "-" + day + "-" + year;
+    let dateTime = `${year}-${month}-${day}`;
+    let dateReal = `${month}-${day}-${year}`;
 
     const filteredEntries = journalData.filter((entry) => {
         const datetime = new Date(entry.datetime);
@@ -131,6 +134,7 @@ function JournalApp({ user }) {
                                         type="date"
                                         value={writtenBefore}
                                         onChange={(e) => setWrittenBefore(e.target.value)}
+                                        aria-label="Enter date here"
                                     />
                                 </label>
                                 <label>
@@ -148,8 +152,8 @@ function JournalApp({ user }) {
                             <div key={index} className="entry" onClick={() => handleEntryClick(entry)}>
                                 <h3>{entry.title}</h3>
                                 <p className="date"><time dateTime={entry.datetime}>{entry.date}</time></p>
-                                <p className="first-line">{entry.fline.substring(0, 50) + "..."}</p> 
-                                <p className="first-line-long">{entry.fline.substring(0, 100) + "..."}</p> 
+                                <p className="first-line">{entry.fline.substring(0, 50) + "..."}</p>
+                                <p className="first-line-long">{entry.fline.substring(0, 100) + "..."}</p>
                             </div>
                         ))}
                     </section>
@@ -158,10 +162,10 @@ function JournalApp({ user }) {
                             <div>
                                 <div className="title">
                                     <h2>Past Entry</h2>
-                                    <input 
-                                        type="text" 
-                                        value={entryData?.title || ''} 
-                                        readOnly 
+                                    <input
+                                        type="text"
+                                        value={entryData?.title || ''}
+                                        readOnly
                                     />
                                     <p className="date"><time dateTime={entryData?.datetime}>{entryData?.date}</time></p>
                                 </div>
@@ -175,19 +179,21 @@ function JournalApp({ user }) {
                         {displayContent === 'CurrentWrite' && (
                             <div>
                                 <h2>Current Entry</h2>
-                                <input 
-                                    type="text" 
-                                    placeholder="Enter Title..." 
-                                    value={entryData.title} 
-                                    onChange={(e) => setEntryData({ ...entryData, title: e.target.value })} 
+                                <input
+                                    type="text"
+                                    placeholder="Enter Title..."
+                                    value={entryData.title}
+                                    onChange={(e) => setEntryData({ ...entryData, title: e.target.value })}
+                                    aria-label="Enter Journal Entry Title here"
                                 />
                                 <p className="date"><time dateTime={dateTime}>{dateReal}</time></p>
-                                <textarea 
-                                    className="current-entry" 
-                                    rows="25" 
-                                    placeholder="Enter your entry..." 
-                                    value={entryData.fline} 
-                                    onChange={(e) => setEntryData({ ...entryData, fline: e.target.value })} 
+                                <textarea
+                                    className="current-entry"
+                                    rows="25"
+                                    placeholder="Enter your entry..."
+                                    value={entryData.fline}
+                                    onChange={(e) => setEntryData({ ...entryData, fline: e.target.value })}
+                                    aria-label="Enter your Journal Entry"
                                 />
                                 <button className="save" onClick={handleSave}>Save</button>
                             </div>
