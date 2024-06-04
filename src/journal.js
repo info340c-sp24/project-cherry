@@ -131,6 +131,8 @@ function JournalApp({ user }) {
                                         type="date"
                                         value={writtenBefore}
                                         onChange={(e) => setWrittenBefore(e.target.value)}
+                                        aria-label="Enter date here"
+                                        
                                     />
                                 </label>
                                 <label>
@@ -180,6 +182,7 @@ function JournalApp({ user }) {
                                     placeholder="Enter Title..." 
                                     value={entryData.title} 
                                     onChange={(e) => setEntryData({ ...entryData, title: e.target.value })} 
+                                    aria-label="Enter Journal Entry Title here"
                                 />
                                 <p className="date"><time dateTime={dateTime}>{dateReal}</time></p>
                                 <textarea 
@@ -188,6 +191,7 @@ function JournalApp({ user }) {
                                     placeholder="Enter your entry..." 
                                     value={entryData.fline} 
                                     onChange={(e) => setEntryData({ ...entryData, fline: e.target.value })} 
+                                    aria-label="Enter your Journal Entry"
                                 />
                                 <button className="save" onClick={handleSave}>Save</button>
                             </div>
