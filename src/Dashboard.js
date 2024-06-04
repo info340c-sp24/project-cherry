@@ -16,6 +16,7 @@ function Dashboard({ user }) {
   const [completedWeeklyTasks, setCompletedWeeklyTasks] = useState(0);
   const [journalTitle, setJournalTitle] = useState('');
   const [journalContent, setJournalContent] = useState('');
+  const [journalDate, setJournalDate] = useState('');
   const [streakCount, setStreakCount] = useState(0);
 
   useEffect(() => {
@@ -55,6 +56,9 @@ function Dashboard({ user }) {
       setStreakCount(data ? data : 0);
     });
 
+    const today = new Date();
+    const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}-${today.getFullYear()}`;
+    setJournalDate(formattedDate);
   }, [user]);
 
   const addTask = (setTasks, tasks, newTask, setNewTask, taskType) => {
@@ -131,7 +135,7 @@ function Dashboard({ user }) {
     const newJournalEntry = {
       title: journalTitle,
       content: journalContent,
-      date: new Date().toLocaleDateString() // Automatically set the date to today's date
+      date: new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).split('/').join('-')
     };
 
     push(journalRef, newJournalEntry)
