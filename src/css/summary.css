@@ -117,10 +117,6 @@ body.summary-page main {
   font-weight: lighter !important;
 }
 
-.carousel-container {
-  position: relative; 
-}
-
 .carousel-container h1 {
   text-align: center;
   font-size: 15px !important;
