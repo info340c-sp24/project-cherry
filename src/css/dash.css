@@ -1,287 +1,297 @@
 @media only screen and (max-width: 768px) {
-  header, main {
-      width: 100%;  /* Use full width */
-      border-radius: 20px; /* Adjusted border radius */
-      padding: 10px 5%;  /* Consistent padding */
-  }
+    header, main {
+      width: 100% !important;  /* Use full width */
+      border-radius: 20px !important; /* Adjusted border radius */
+      padding: 10px 5% !important;  /* Consistent padding */
+      font-weight: bold !important;
+    }
+  
+    cherryHeader h1 {
+      margin-top: 100px !important; /* Reduce top margin */
+      padding: 2% 3% !important; /* Adjusted padding */
+      /*font-weight: bold !important; */
+    }
 
-  h1 {
-      margin-top: 10px; /* Reduce top margin */
-      padding: 2% 3%; /* Adjusted padding */
+    h2 {
+      font-weight: bold !important;
+    }
+    
+    body {
+      font-size: 14px !important; /* Smaller font size for better readability */
+    }
+  
+    nav {
+      padding: 0.5em 0 !important;  /* Less vertical padding */
+      font-size: 0.9em !important;  /* Smaller font size for nav items */
+    }
+  
+    nav ul {
+      flex-direction: column !important; /* Stack navigation links vertically */
+    }
+  
+    nav li {
+      margin: 10px 5px !important; /* Smaller margins */
+    }
+  
+    article, .checklist, .thirds {
+      width: 100% !important; /* Full width for better space utilization */
+      margin: 5px 0 !important; /* Smaller margins */
+      padding: 8px !important; /* Less padding inside articles */
+    }
+  
+    .thirds {
+      flex-direction: column !important; /* Stack articles vertically */
+    }
+  
+    .thirds > article {
+      height: auto !important; /* Flexible height */
+    }
+  
+    .thirds > article > img, .icon {
+      width: 15px !important; /* Smaller icons */
+      height: 15px !important;
+    }
+  
+    .add {
+      width: 15px !important;
+      height: 15px !important;
+      right: 5px !important; /* Adjust position */
+      bottom: 5px !important;
+    }
+  
+    textarea {
+      height: 120px !important; /* Fixed height for textarea */
+    }
+  
+    footer {
+      padding: 1rem 0 !important;  /* Reduced padding */
+      font-size: 0.8em !important; /* Smaller font size */
+    }
+  
+    /* Specific rule to hide the image in the 'Summary' article */
+    .placeholder {
+      display: none !important;
+      visibility: hidden !important;
+    }
   }
-
+  
   body {
-      font-size: 14px; /* Smaller font size for better readability */
+    background-color: #e584cd !important;
+    font-family: "Georgia", "Times New Roman", "Times", "serif" !important;
   }
-
-  nav {
-      padding: 0.5em 0;  /* Less vertical padding */
-      font-size: 0.9em;  /* Smaller font size for nav items */
+  
+  header {
+    margin: 60px auto !important;
+    background-color: #e6acde !important;
+    text-align: center !important;
+    margin-top: 100px !important;
   }
-
-  nav ul {
-      flex-direction: column; /* Stack navigation links vertically */
+  
+  h1 {
+    margin-top: 20px !important;
+    padding: 1% !important;
+    font-weight: bold !important;
   }
-
-  nav li {
-      margin: 10px 5px; /* Smaller margins */
+  
+  main {
+    background-color: white !important;
+    padding: 3vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: -20px !important;
   }
-
-  article, .checklist, .thirds {
-      width: 100%; /* Full width for better space utilization */
-      margin: 5px 0; /* Smaller margins */
-      padding: 8px; /* Less padding inside articles */
+  /* do not touch this impacts journal */
+  header, main {
+    border-radius: 50px !important;
+    width: 80% !important;
+    box-sizing: border-box !important;
   }
-
-  .thirds {
-      flex-direction: column; /* Stack articles vertically */
-  }
-
-  .thirds > article {
-      height: auto; /* Flexible height */
-  }
-
-  .thirds > article > img, .icon {
-      width: 15px; /* Smaller icons */
-      height: 15px;
-  }
-
-  .add {
-      width: 15px;
-      height: 15px;
-      right: 5px; /* Adjust position */
-      bottom: 5px;
-  }
-
-  textarea {
-      height: 120px; /* Fixed height for textarea */
-  }
-
-  footer {
-      padding: 1rem 0;  /* Reduced padding */
-      font-size: 0.8em; /* Smaller font size */
-  }
-
-  /* Specific rule to hide the image in the 'Summary' article */
-  .placeholder {
-      display: none;
-      visibility: hidden;
-  }
-}
-
-body {
-  background-color: #e584cd;
-  font-family:"Georgia", "Times New Roman", "Times", "serif";
-}
-
-header {
-  margin: 60px auto;
-  background-color: #e6acde;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 20px;
-  padding: 1%;
-}
-
-main {
-  background-color: white;
-  padding: 3vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-header, main {
-  border-radius: 50px;
-  width: 80%;
-  box-sizing: border-box;
-}
-
-/*
-* Nav styles
-*/
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #e6acde;
-  color: white;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
-  z-index: 1000;
-  padding: 0.8em 0;
-  box-sizing: border-box;
-  }
-
-  nav ul {
-  margin: 0 auto;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  }
-
-  nav li {
-  margin: 0 20px;
-  font-size: 1.2em;
-  }
-
-  nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.6s;
-  }
-
-  nav a:hover, nav a:focus {
-  color: #421a39;
-  text-decoration: none;
-  }
+  
 
   /*
-* Footer styles
-*/
-footer {
-  width: 100%;
-  background-color: #f3e0f7;
-  color: #333;
-  text-align: center;
-  padding: 3rem 0 10rem 0;
-  border-radius: 0;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  font-size: 0.95em;
-  margin-top: 2rem;
+   * Nav styles
+   */
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #e6acde !important;
+    color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15) !important;
+    z-index: 1000 !important;
+    padding: 0.8em 0 !important;
+    box-sizing: border-box !important;
   }
-
+  
+  nav ul {
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    list-style-type: none !important;
+  }
+  
+  nav li {
+    margin: 0 20px !important;
+    font-size: 1.2em !important;
+  }
+  
+  nav a {
+    color: white !important;
+    text-decoration: none !important;
+    transition: color 0.6s !important;
+  }
+  
+  nav a:hover, nav a:focus {
+    color: #421a39 !important;
+    text-decoration: none !important;
+  }
+  
+  /*
+   * Footer styles
+   */
+  footer {
+    width: 100% !important;
+    background-color: #f3e0f7 !important;
+    color: #333 !important;
+    text-align: center !important;
+    padding: 3rem 0 10rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
+    font-size: 0.95em !important;
+    margin-top: 2rem !important;
+  }
+  
   footer ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
   }
-
+  
   footer li {
-  margin: 0 10px;
+    margin: 0 10px !important;
   }
-
+  
   footer a {
-  color: #864e95;
-  text-decoration: none;
+    color: #864e95 !important;
+    text-decoration: none !important;
   }
-
+  
   footer a:hover, footer a:focus {
-  text-decoration: underline;
-  color: #bf77b6;
+    text-decoration: underline !important;
+    color: #bf77b6 !important;
   }
-
-
-/*
-* Dashboard styles
-*/
-article {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.checklist {
-width: 33.333%;
-height: 100%;
-}
-
-.thirds {
-  width: 33.333%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.thirds > article > img {
-  height: 80px;
-}
-
-.thirds > article {
-  height: 50%;
-}
-
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/*
-* Icon styles
-*/
-.icon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  padding-left: 5px;
-}
-
-.edit, .remove {
-  margin-left: 10px;
-}
-
-.add {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  cursor: pointer;
-}
-
-article {
-  position: relative;
-  padding: 15px;
-  overflow: hidden;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-.content {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Existing styles */
-
-/* Add styles for editing state */
-li.editing input {
-  border: 2px solid #e584cd;
-  outline: none;
-}
-
-li.editing input:focus {
-  border-color: #bf77b6;
-}
-
-/* Add styles for the add task button */
-.add-task-button {
-  background-color: #e584cd; /* Pink background */
-  color: white; /* White text */
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.add-task-button:hover {
-  background-color: #bf77b6; /* Slightly darker pink on hover */
-}
+  
+  /*
+   * Dashboard styles
+   */
+  article {
+    border: 1px solid #ccc !important;
+    margin: 10px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    font-weight: bold;
+  }
+  
+  .checklist {
+    width: 33.333% !important;
+    height: 100% !important;
+  }
+  
+  .thirds {
+    width: 33.333% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+  
+  .thirds > article > img {
+    height: 80px !important;
+  }
+  
+  .thirds > article {
+    height: 50% !important;
+  }
+  
+  textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /*
+   * Icon styles
+   */
+  .icon {
+    width: 20px !important;
+    height: 20px !important;
+    cursor: pointer !important;
+    padding-left: 5px !important;
+  }
+  
+  .edit, .remove {
+    margin-left: 10px !important;
+  }
+  
+  .add {
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: none !important;
+    background: transparent !important;
+    position: absolute !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    cursor: pointer !important;
+  }
+  
+  article {
+    position: relative !important;
+    padding: 15px !important;
+    overflow: hidden !important;
+  }
+  
+  ul {
+    list-style-type: none !important;
+    padding: 0 !important;
+  }
+  
+  li {
+    margin-bottom: 5px !important;
+  }
+  
+  .content {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  /* Existing styles */
+  
+  /* Add styles for editing state */
+  li.editing input {
+    border: 2px solid #e584cd !important;
+    outline: none !important;
+  }
+  
+  li.editing input:focus {
+    border-color: #bf77b6 !important;
+  }
+  
+  /* Add styles for the add task button */
+  .add-task-button {
+    background-color: #e584cd !important; /* Pink background */
+    color: white !important; /* White text */
+    border: none !important;
+    padding: 10px 20px !important;
+    margin-top: 10px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .add-task-button:hover {
+    background-color: #bf77b6 !important; /* Slightly darker pink on hover */
+  }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Login from './StyledFirebaseAuth';
-//import { getAuth } from 'firebase/auth';
 import './css/MySignInScreen.css';
 
 function MySignInScreen() {

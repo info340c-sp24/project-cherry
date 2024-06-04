@@ -6,94 +6,104 @@ import { ref, get, update } from 'firebase/database';
 import { db } from './index';
 import SummaryHeader from './summaryHeader';
 
-
-//<img src="images/profile-picture.png" alt="Profile Picture" className="profile-picture" />
-
-
-function SummaryCard({ title, text, imgSrc, alt, user }) {
- const [editableText, setEditableText] = useState(text);
-
- useEffect(() => {
-   setEditableText(text);
- }, [text]);
-
-
- const handleTextChange = (event) => {
-   setEditableText(event.target.innerText);
- };
-
-
- const handleBlur = () => {
-   if (title === "GOALS") {
-     const userGoalRef = ref(db, `users/${user.uid}/goal`);
-     update(userGoalRef, { goal: editableText })
-       .then(() => console.log("Goal updated successfully"))
-       .catch((error) => console.error('Error updating goal:', error));
-   }
- };
-
- let summaryContent;
- if (title === "GOALS") {
-   summaryContent = (
-     <p
-       className="summary-card-text"
-       contentEditable="true"
-       onBlur={handleBlur}
-       onInput={handleTextChange}
-     >
-       {editableText}
-     </p>
-   );
- } else {
-   summaryContent = <p className="summary-card-text">{text}</p>;
- }
-
-
- return (
-   <div className="summary-card">
-     <div className="summary-card-content">
-       <img src={imgSrc} className="summary-card-img" alt={alt} />
-       <div>
-         <h2 className="summary-card-title">{title}</h2>
-         {summaryContent}
-       </div>
-     </div>
-   </div>
- );
+function SummaryCard({ title, text, imgSrc, alt, user, isGoal, onGoalChange, goalValue, isEditing, onEditClick }) {
+  return (
+    <div className="summary-card" aria-label={title}>
+      <div className="summary-card-content">
+        <img src={imgSrc} className="summary-card-img" alt={alt} />
+        <div>
+          <h2 className="summary-card-title">{title}</h2>
+          {isGoal ? (
+            <div>
+              {isEditing ? (
+                <div>
+                  <input
+                    type="text"
+                    value={goalValue}
+                    onChange={onGoalChange}
+                    className="goal-input"
+                    placeholder="Enter goal here"
+                    aria-label="Enter goal here"
+                  />
+                  <button onClick={onEditClick} className="save-goal-button" aria-label="Save Goal">
+                    Save Goal
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <p>{goalValue}</p>
+                  <button onClick={onEditClick} className="save-goal-button" aria-label="Edit Goal">
+                    Edit Goal
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            text
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
-
 
 export function SummaryApp({ user }) {
  const [completedTasks, setCompletedTasks] = useState(0);
- const [goal, setGoal] = useState("");
-
+ const [streakCount, setStreakCount] = useState(0);
+ const [goal, setGoal] = useState('');
+ const [isEditing, setIsEditing] = useState(false);
 
  useEffect(() => {
-   const userRef = ref(db, `users/${user.uid}/completedTasks`);
-   get(userRef)
-     .then((snapshot) => {
-       const completedTasksCount = snapshot.val() || 0;
-       setCompletedTasks(completedTasksCount);
-     })
-     .catch((error) => {
-       console.error('Error fetching completed tasks count:', error);
-     });
+  if (!user || !user.uid) {
+    console.error("User or user.uid is undefined");
+    return;
+  }
+
+  const completedDailyTasksRef = ref(db, `users/${user.uid}/completedDailyTasks`);
+  const completedWeeklyTasksRef = ref(db, `users/${user.uid}/completedWeeklyTasks`);
+  const streakCountRef = ref(db, `users/${user.uid}/streakCount`);
+  const goalRef = ref(db, `users/${user.uid}/goal`);
+
+  Promise.all([
+    get(completedDailyTasksRef),
+    get(completedWeeklyTasksRef),
+    get(streakCountRef),
+    get(goalRef)
+  ])
+  .then(([dailySnapshot, weeklySnapshot, streakSnapshot, goalSnapshot]) => {
+    const completedDailyTasksCount = dailySnapshot.val() || 0;
+    const completedWeeklyTasksCount = weeklySnapshot.val() || 0;
+    const streakCountData = streakSnapshot.val() || 0;
+    const goalData = goalSnapshot.val() ? goalSnapshot.val().goal : '';
+    setCompletedTasks(completedDailyTasksCount + completedWeeklyTasksCount);
+    setStreakCount(streakCountData);
+    setGoal(goalData);
+  })
+  .catch((error) => {
+    console.error('Error getting completed tasks count:', error);
+  });}, [user.uid]);
 
 
- const userGoalRef = ref(db, `users/${user.uid}/goal`);
-   get(userGoalRef)
-     .then((snapshot) => {
-       const goalData = snapshot.val();
-       if (goalData && typeof goalData.goal === 'string') {
-         setGoal(goalData.goal);
-       } else {
-         setGoal("");
-       }
-     })
-     .catch((error) => {
-       console.error('Error fetching user goal:', error);
-     });
-   }, [user.uid]);
+  const handleGoalChange = (e) => {
+    const newGoal = e.target.value;
+    setGoal(newGoal);
+    if (user && user.uid) {
+      const goalRef = ref(db, `users/${user.uid}/goal`);
+      update(goalRef, { goal: newGoal }).catch((error) => {
+        console.error('Error saving goal:', error);
+      });
+    }
+  };
+
+  const handleEditClick = () => {
+    if (isEditing && user && user.uid) {
+      const goalRef = ref(db, `users/${user.uid}/goal`);
+      update(goalRef, { goal }).catch((error) => {
+        console.error('Error saving goal:', error);
+      });
+    }
+    setIsEditing(!isEditing);
+  };
 
 
  return (
@@ -104,22 +114,27 @@ export function SummaryApp({ user }) {
        <div className="summary-container">
          <div className="row">
            <SummaryCard user = {user}
-             title="CURRENT STREAK"
-             text="0 Days"
+             title="CURRENT JOURNALING STREAK"
+             text={`${streakCount} Days`}
              imgSrc="images/flame.png"
              alt="Red, Orange, and Yellow Flame Emoticon"
            />
            <SummaryCard user = {user}
-             title="TOTAL COMPLETED HABITS"
-             text={`${completedTasks} Habits`}
+             title="TOTAL COMPLETED TASKS"
+             text={`${completedTasks} Tasks`}
              imgSrc="images/graph.png"
              alt="Black bar graph, with three bars"
            />
            <SummaryCard user = {user}
-             title="GOALS"
-             text={goal}
+             title="GOAL"
+             text=""
              imgSrc="images/goal.png"
              alt="Circle dart board with dart on the center"
+             isGoal={true}
+             onGoalChange={handleGoalChange}
+             goalValue={goal}
+             isEditing={isEditing}
+             onEditClick={handleEditClick}
            />
            <SummaryCard user = {user}
              title="PERSONAL DETAILS"
@@ -139,4 +154,3 @@ export function SummaryApp({ user }) {
    </div>
  );
 }
-

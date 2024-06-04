@@ -1,138 +1,131 @@
 .header {
-  margin-top: 100px;
+  margin-top: 100px !important;
 }
 
-
-
 .content {
-  display: flex;
-  flex-direction: row;
-  
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 .entries {
-  min-width: 125px;
-  flex: 1;
-  padding-right:.5rem;
-  border-right: solid 2px #e6acde;
-  height: calc(100vh - 200px); /* Set a specific height for the entries section */
-  overflow-y: auto;
-  overflow-x: hidden;
+  min-width: 125px !important;
+  flex: 1 !important;
+  padding-right: .5rem !important;
+  border-right: solid 2px #e6acde !important;
+  height: calc(100vh - 200px) !important; /* Set a specific height for the entries section */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
 .entry {
-  display: contents;
+  display: contents !important;
 }
 
 .entry-lg {
-  display: none;
+  display: none !important;
 }
 
 .page {
-  min-width: 200px;
-  padding-left: 1rem;
-  flex: content;
+  min-width: 200px !important;
+  padding-left: 1rem !important;
+  flex: content !important;
 }
 
 h2 {
-  text-align: center;
-  margin-top: 0;
+  text-align: center !important;
+  margin-top: 0 !important;
 }
 
 .subheader {
-  padding-bottom: 1%;
+  padding-bottom: 1% !important;
 }
 
 input {
-  font-size: medium;
-  align-self: center;
-  margin-top: 0;
-  border: none;
-  border-bottom: 1px solid black;
-  font-family: "Georgia", "Times New Roman", "Times", "serif";
-  font-weight: bold;
+  font-size: medium !important;
+  align-self: center !important;
+  margin-top: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid black !important;
+  font-family: "Georgia", "Times New Roman", "Times", "serif" !important;
+  font-weight: bold !important;
 }
 
-
 h3 {
-  font-size:medium;
-  margin:0;
-  padding-top: .25rem;
+  font-size: medium !important;
+  margin: 0 !important;
+  padding-top: .25rem !important;
 }
 
 p {
-  font-size:small;
-  margin: 0;
+  font-size: small !important;
+  margin: 0 !important;
 }
 
 .date {
-  padding-bottom: 3px;
-  font-style:italic;
+  padding-bottom: 3px !important;
+  font-style: italic !important;
 }
 
 .first-line {
-  padding-bottom: .25rem;
-  border-bottom: dashed 1px black;
+  padding-bottom: .25rem !important;
+  border-bottom: dashed 1px black !important;
 }
 
 .first-line:last-of-type {
-  margin-bottom: 1em;
+  margin-bottom: 1em !important;
 }
 
 .first-line-long {
-  display:none;
+  display: none !important;
 }
 
 .filter-options {
-  display:flex;
-  flex-direction:column;
-  margin-bottom: 1em;
-  padding-bottom: .5em;
-  border-bottom: dashed 2px black;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 1em !important;
+  padding-bottom: .5em !important;
+  border-bottom: dashed 2px black !important;
 }
 
 .filter-options label {
-  margin-bottom: .5em;
+  margin-bottom: .5em !important;
 }
 
 .filter-options input {
-  font-weight: light;
-  font-size: 95%;
-  width: 100%;
+  font-weight: light !important;
+  font-size: 95% !important;
+  width: 100% !important;
 }
 
-
 .current-entry {
-  height: 60vh;
-  width: 100%;
-  background-color: #f2d9ef;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  margin-top: .5rem;
+  height: 60vh !important;
+  width: 100% !important;
+  background-color: #f2d9ef !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 5px !important;
+  margin-top: .5rem !important;
 }
 
 button {
-  margin: 5px;
+  margin: 5px !important;
 }
 
 @media (min-width: 768px) {
   .entries {
-    flex: 1;
-    padding-right:.5rem;
-    border-right: solid 2px #e6acde;
-    height: calc(100vh - 200px); /* Set a specific height for the entries section */
-    overflow-y: auto;
+    flex: 1 !important;
+    padding-right: .5rem !important;
+    border-right: solid 2px #e6acde !important;
+    height: calc(100vh - 200px) !important; /* Set a specific height for the entries section */
+    overflow-y: auto !important;
   }
 
   .first-line {
-    display:none;
+    display: none !important;
   }
 
   .first-line-long {
-    display: block;
-    border-bottom: dashed 1px black;
+    display: contents !important;
+    border-bottom: dashed 1px black !important;
   }
 }
-
-
