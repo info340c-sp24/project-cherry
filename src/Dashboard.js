@@ -135,6 +135,7 @@ function Dashboard({ user }) {
     const newJournalEntry = {
       title: journalTitle,
       content: journalContent,
+      datetime: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}).split('/').join('-'),
       date: new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).split('/').join('-')
     };
 
