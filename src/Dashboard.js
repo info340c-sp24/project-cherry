@@ -150,7 +150,7 @@ function Dashboard({ user }) {
   };
 
   if (!user || !user.uid) {
-    return <div>Loading...</div>; // Show a loading message or spinner
+    return <div>Loading...</div>; 
   }
 
   const todayTaskList = todayTasks.map((task, index) => (

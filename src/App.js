@@ -40,7 +40,6 @@ const App = () => {
           ) : (
             <>
               <Route path="/login" element={<MySignInScreen />} />
-              {/* <Route path="*" element={<MySignInScreen replace />} /> */}
               <Route path="*" element={<Navigate to="/login" replace />} />
             </>
           )}

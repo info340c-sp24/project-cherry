@@ -127,8 +127,8 @@ body.summary-page main {
 
 .carousel-item {
   display: flex;
-  justify-content: center !important; /* Horizontally center content */
-  align-items: center !important; /* Vertically center content */
+  justify-content: center !important; 
+  align-items: center !important; 
 }
 
 .carousel-indicators {

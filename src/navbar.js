@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/styles.css';
-// import JournalApp from './journal';
-// import Dashboard from './Dashboard';
-// import { SummaryApp } from './summary';
 
 export function Navbar() {  
     return (

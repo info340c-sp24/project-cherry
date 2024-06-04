@@ -12,7 +12,7 @@
   flex: 1 !important;
   padding-right: .5rem !important;
   border-right: solid 2px #e6acde !important;
-  height: calc(100vh - 200px) !important; /* Set a specific height for the entries section */
+  height: calc(100vh - 200px) !important; 
   overflow-y: auto !important;
   overflow-x: hidden !important;
 }
