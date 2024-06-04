@@ -130,7 +130,7 @@ button {
   }
 
   .first-line-long {
-    display: contents;
+    display: block;
     border-bottom: dashed 1px black;
   }
 }
