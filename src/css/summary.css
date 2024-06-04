@@ -41,10 +41,6 @@ body.summary-page main {
   padding: 20px !important;
 }
 
-.card-text-goals{
-  font-size: 30px !important;
-}
-
 .summary-card-content {
   display: flex !important;
   align-items: center !important;
@@ -118,9 +114,9 @@ body.summary-page main {
   margin-top: 10px !important;
   margin-left: -0px !important;
 }
-/* Custom styles for the Summary Carousel */
+
 .carousel-container {
-  position: relative; /* Ensure relative positioning for absolute arrow positioning */
+  position: relative; 
 }
 
 .carousel-container h1 {

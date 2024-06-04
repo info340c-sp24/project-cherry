@@ -116,198 +116,198 @@ nav {
   }
 
   nav ul {
-    margin: 0 auto !important;
-    padding: 0 10px !important;
-    display: flex !important;
-    justify-content: center !important;
-    list-style-type: none !important;
-  }
-  
-  nav li {
-    margin: 0 20px !important;
-    font-size: 1.2em !important;
-  }
-  
-  nav a {
-    color: white !important;
-    text-decoration: none !important;
-    transition: color 0.6s !important;
-  }
-  
-  nav a:hover, nav a:focus {
-    color: #421a39 !important;
-    text-decoration: none !important;
-  }
-  
-  /* Footer styles */
-  footer {
-    width: 100% !important;
-    background-color: #f3e0f7 !important;
-    color: #333 !important;
-    text-align: center !important;
-    padding: 3rem 0 10rem 0 !important;
-    border-radius: 0 !important;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
-    font-size: 0.95em !important;
-    margin-top: 2rem !important;
-  }
-  
-  footer ul {
-    list-style-type: none !important;
-    padding: 0 !important;
-    margin: 10px 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  
-  footer li {
-    margin: 0 10px !important;
-  }
-  
-  footer a {
-    color: #864e95 !important;
-    text-decoration: none !important;
-  }
-  
-  footer a:hover, footer a:focus {
-    text-decoration: underline !important;
-    color: #bf77b6 !important;
-  }
-  
-  /* Dashboard styles */
-  article {
-    border: 1px solid #ccc !important;
-    margin: 10px !important;
-    padding: 10px !important;
-    box-sizing: border-box !important;
-  }
-  
-  .checklist {
-    width: 33.333% !important;
-    height: 100% !important;
-  }
-  
-  .thirds {
-    width: 33.333% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-  }
-  
-  .thirds > article > img {
-    height: 80px !important;
-  }
-  
-  .thirds > article {
-    height: 50% !important;
-  }
-  
-  textarea {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Icon styles */
-  .icon {
-    width: 25px !important;
-    height: 25px !important;
-    cursor: pointer !important;
-    padding-left: 5px !important;
-    border-radius: 50% !important; /* Make icons circular */
-  }
-  
-  .edit, .remove, .complete {
-    margin-left: 15px !important;
-    margin-right: 5px !important; /* Add space to the right */
-  }
-  
-  li {
-    display: flex !important;
-    align-items: center !important; /* Align items in the center */
-    justify-content: space-between !important; /* Distribute space evenly */
-  }
-  
-  li > span {
-    flex-grow: 1 !important; /* Allow the text to take up available space */
-  }
-  
-  /* Ensure buttons are more towards the right side */
-  li > .icon-container {
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  /* Add this to position the icons correctly */
-  li > .icon-container img {
-    margin-left: 10px !important;
-  }
-  
-  li.editing input {
-    flex-grow: 1 !important; /* Allow input to take up available space */
-  }
-  
-  /* journal css */
-  .content {
-    display: flex !important;
-    flex-direction: row !important;
-  }
-  
-  .entries {
-    flex: 1 !important;
-    padding-right: .5rem !important;
-    border-right: solid 2px #e6acde !important;
-  }
-  
-  .entry {
-    display: contents !important;
-  }
-  
-  .page {
-    padding-left: 1rem !important;
-    flex: content !important;
-  }
-  
-  h2 {
-    text-align: center !important;
-    margin-top: 0 !important;
-  }
-  
-  .subheader {
-    padding-bottom: 1% !important;
-  }
-  
-  .current-title {
-    text-align: left !important;
-    margin-bottom: 0 !important;
-  }
-  
-  h3 {
-    font-size: medium !important;
-    margin: 0 !important;
-    padding-top: .25rem !important;
-  }
-  
-  p {
-    font-size: small !important;
-    margin: 0 !important;
-  }
-  
-  .date {
-    padding-bottom: 3px !important;
-    font-style: italic !important;
-  }
-  
-  .first-line {
-    padding-bottom: .25rem !important;
-    border-bottom: dashed 1px black !important;
-  }
-  
-  textarea {
-    width: 100% !important;
-    height: 100% !important;
-    background-color: #f2d9ef !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 5px !important;
-    margin-top: .5rem !important;
-  }
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+  list-style-type: none !important;
+}
+
+nav li {
+  margin: 0 20px !important;
+  font-size: 1.2em !important;
+}
+
+nav a {
+  color: white !important;
+  text-decoration: none !important;
+  transition: color 0.6s !important;
+}
+
+nav a:hover, nav a:focus {
+  color: #421a39 !important;
+  text-decoration: none !important;
+}
+
+/* Footer styles */
+footer {
+  width: 100% !important;
+  background-color: #f3e0f7 !important;
+  color: #333 !important;
+  text-align: center !important;
+  padding: 3rem 0 10rem 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1) !important;
+  font-size: 0.95em !important;
+  margin-top: 2rem !important;
+}
+
+footer ul {
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+footer li {
+  margin: 0 10px !important;
+}
+
+footer a {
+  color: #864e95 !important;
+  text-decoration: none !important;
+}
+
+footer a:hover, footer a:focus {
+  text-decoration: underline !important;
+  color: #bf77b6 !important;
+}
+
+/* Dashboard styles */
+article {
+  border: 1px solid #ccc !important;
+  margin: 10px !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+}
+
+.checklist {
+  width: 33.333% !important;
+  height: 100% !important;
+}
+
+.thirds {
+  width: 33.333% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.thirds > article > img {
+  height: 80px !important;
+}
+
+.thirds > article {
+  height: 50% !important;
+}
+
+textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Icon styles */
+.icon {
+  width: 25px !important;
+  height: 25px !important;
+  cursor: pointer !important;
+  padding-left: 5px !important;
+  border-radius: 50% !important; /* Make icons circular */
+}
+
+.edit, .remove, .complete {
+  margin-left: 15px !important;
+  margin-right: 5px !important; /* Add space to the right */
+}
+
+li {
+  display: flex !important;
+  align-items: center !important; /* Align items in the center */
+  justify-content: space-between !important; /* Distribute space evenly */
+}
+
+li > span {
+  flex-grow: 1 !important; /* Allow the text to take up available space */
+}
+
+/* Ensure buttons are more towards the right side */
+li > .icon-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Add this to position the icons correctly */
+li > .icon-container img {
+  margin-left: 10px !important;
+}
+
+li.editing input {
+  flex-grow: 1 !important; /* Allow input to take up available space */
+}
+
+/* journal css */
+.content {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.entries {
+  flex: 1 !important;
+  padding-right: .5rem !important;
+  border-right: solid 2px #e6acde !important;
+}
+
+.entry {
+  display: contents !important;
+}
+
+.page {
+  padding-left: 1rem !important;
+  flex: content !important;
+}
+
+h2 {
+  text-align: center !important;
+  margin-top: 0 !important;
+}
+
+.subheader {
+  padding-bottom: 1% !important;
+}
+
+.current-title {
+  text-align: left !important;
+  margin-bottom: 0 !important;
+}
+
+h3 {
+  font-size: medium !important;
+  margin: 0 !important;
+  padding-top: .25rem !important;
+}
+
+p {
+  font-size: small !important;
+  margin: 0 !important;
+}
+
+.date {
+  padding-bottom: 3px !important;
+  font-style: italic !important;
+}
+
+.first-line {
+  padding-bottom: .25rem !important;
+  border-bottom: dashed 1px black !important;
+}
+
+textarea {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #f2d9ef !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 5px !important;
+  margin-top: .5rem !important;
+}
