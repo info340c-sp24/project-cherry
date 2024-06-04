@@ -152,6 +152,26 @@ function Dashboard({ user }) {
     return <div>Loading...</div>; // Show a loading message or spinner
   }
 
+  const todayTaskList = todayTasks.map((task, index) => (
+    <Task
+      key={index}
+      task={task}
+      onRemove={() => removeTask(setTodayTasks, todayTasks, index, 'todayTasks')}
+      onEdit={(newTask) => editTask(setTodayTasks, todayTasks, index, newTask, 'todayTasks')}
+      onComplete={() => completeTask(setTodayTasks, todayTasks, index, true, 'todayTasks')}
+    />
+  ));
+
+  const weeklyTaskList = weeklyTasks.map((task, index) => (
+    <Task
+      key={index}
+      task={task}
+      onRemove={() => removeTask(setWeeklyTasks, weeklyTasks, index, 'weeklyTasks')}
+      onEdit={(newTask) => editTask(setWeeklyTasks, weeklyTasks, index, newTask, 'weeklyTasks')}
+      onComplete={() => completeTask(setWeeklyTasks, weeklyTasks, index, false, 'weeklyTasks')}
+    />
+  ));
+
   return (
     <div>
       <header>
@@ -163,15 +183,7 @@ function Dashboard({ user }) {
           <article className="checklist">
             <h2>Today's Checklist</h2>
             <ul>
-              {todayTasks.map((task, index) => (
-                <Task
-                  key={index}
-                  task={task}
-                  onRemove={() => removeTask(setTodayTasks, todayTasks, index, 'todayTasks')}
-                  onEdit={(newTask) => editTask(setTodayTasks, todayTasks, index, newTask, 'todayTasks')}
-                  onComplete={() => completeTask(setTodayTasks, todayTasks, index, true, 'todayTasks')}
-                />
-              ))}
+              {todayTaskList}
             </ul>
             <input
               type="text"
@@ -185,15 +197,7 @@ function Dashboard({ user }) {
           <article className="checklist">
             <h2>Weekly Checklist</h2>
             <ul>
-              {weeklyTasks.map((task, index) => (
-                <Task
-                  key={index}
-                  task={task}
-                  onRemove={() => removeTask(setWeeklyTasks, weeklyTasks, index, 'weeklyTasks')}
-                  onEdit={(newTask) => editTask(setWeeklyTasks, weeklyTasks, index, newTask, 'weeklyTasks')}
-                  onComplete={() => completeTask(setWeeklyTasks, weeklyTasks, index, false, 'weeklyTasks')}
-                />
-              ))}
+              {weeklyTaskList}
             </ul>
             <input
               type="text"
